@@ -18,4 +18,7 @@ Gia Bao Huynh is an independent researcher based in Ho Chi Minh City, Vietnam, w
 ## Contact
 - Email: huynhbao@asu.edu  
 - LinkedIn: http://www.linkedin.com/in/baojunhuynh  
-- ORCID: https://orcid.org/0009-0008-2372-5852
+- ORCID: https://orcid.org/0009-0008-2372-5852  
+- PhilPeople: https://philpeople.org/profiles/gia-bao-huynh  
+- Academia: https://independent.academia.edu/GiaB%E1%BA%A3oHu%E1%BB%B3nh30  
+- Google Scholar: https://scholar.google.com/citations?user=P52UxDMAAAAJ&hl=en
