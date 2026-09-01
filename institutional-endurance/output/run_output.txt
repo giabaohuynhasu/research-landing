@@ -1,0 +1,28 @@
+=== INSTITUTIONAL ENDURANCE VOL. III: DURATION COMPARISON (N=10) ===
+
+Concluded Arrangements (N=8), Shortest to Longest:
+  - Cambodia (UNTAC)                    (revived    ):   1.6 yrs (1992–1993)
+  - East Timor (UNTAET)                 (constructed):   2.6 yrs (1999–2002)
+  - Japan (SCAP)                        (preserved  ):   7.0 yrs (1945–1952)
+  - Morocco (French Protectorate)       (preserved  ):  44.0 yrs (1912–1956)
+  - Nigeria (Northern Protectorate)     (preserved  ):  60.0 yrs (1900–1960)
+  - Tunisia (French Protectorate)       (preserved  ):  75.0 yrs (1881–1956)
+  - China (Yuan Dynasty)                (preserved  ): 134.0 yrs (1234–1368)
+  - Vietnam (Tang Protectorate)         (preserved  ): 259.0 yrs (679–938)
+
+Right-Censored / Active Arrangements (N=2):
+  - Kosovo (UNMIK)                      (constructed):  27.0+ yrs (active since 1999)
+  - Bosnia and Herzegovina (OHR)        (hybrid     ):  31.0+ yrs (active since 1995)
+
+Concluded Distribution Summary:
+  - Median: 52.0 years
+  - Mean:   72.9 years
+  - Range:  1.6 to 259.0 years
+
+Censoring Findings:
+  1. Both Bosnia (31.0+ yrs) and Kosovo (27.0+ yrs) have already outlasted
+     the three shortest concluded arrangements (Cambodia 1.6y, Timor 2.6y, Japan 7.0y).
+  2. Both remain shorter than 5 of the 6 historical preserved-authority arrangements
+     at full duration (Morocco 44y, Nigeria 60y, Tunisia 75y, Yuan 134y, Tang 259y).
+  3. Honest limitation: Duration comparison proves they are not short transitional
+     post-conflict regimes, but establishes neither how nor when they will conclude.

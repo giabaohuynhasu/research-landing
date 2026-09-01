@@ -1,0 +1,11 @@
+case,authority_type,censored,duration_years,start_year,end_year,citation
+Cambodia (UNTAC),revived,0,1.6,1992,1993,"Doyle (1995); UNSC Res 745 (1992); 1993 Constitution"
+East Timor (UNTAET),constructed,0,2.6,1999,2002,"UNSC Res 1272 (1999); May 2002 Independence"
+Japan (SCAP),preserved,0,7.0,1945,1952,"Dower (1999) Embracing Defeat; San Francisco Treaty 1952"
+Morocco (French Protectorate),preserved,0,44.0,1912,1956,"Pennell (2000); Miller (2013); Treaty of Fez to March 1956"
+Nigeria (Northern Protectorate),preserved,0,60.0,1900,1960,"Lugard (1922); Lange (2009); October 1960 Independence"
+Tunisia (French Protectorate),preserved,0,75.0,1881,1956,"Treaty of Bardo 1881; March 1956 Independence"
+China (Yuan Dynasty),preserved,0,134.0,1234,1368,"Mote (1999); Dardess (1973); 1234 Jin fall to 1368 Ming founding"
+Vietnam (Tang Protectorate),preserved,0,259.0,679,938,"Taylor (1983) Birth of Vietnam; 679 Annam Protectorate to 938 Bach Dang"
+Bosnia and Herzegovina (OHR),hybrid,1,31.0,1995,2026,"Dayton Agreement (1995); Bonn Powers (1997); Ongoing as of 2026"
+Kosovo (UNMIK),constructed,1,27.0,1999,2026,"UNSC Res 1244 (1999); 2008 Independence declaration; Mandate legally active 2026"
