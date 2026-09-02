@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAR-OS | Frontier Scientific Research Portfolio</title>
-    <meta name="description" content="Autonomous Research Portfolio by Gia Bao Huynh (Jun). Covering The Fact Before the Vote (AI Personhood) and The Architecture of Biological Stratification (Longevity Asymmetry).">
+    <meta name="description" content="Autonomous Research Portfolio by Gia Bao Huynh (Jun). Covering AI Personhood, Longevity Asymmetry, and War Correspondent Philosophy (WCP).">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
             --accent-emerald: #10b981;
             --accent-purple: #a855f7;
             --accent-rose: #f43f5e;
+            --accent-amber: #f59e0b;
             --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
@@ -43,7 +44,7 @@
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(79, 172, 254, 0.07) 0%, transparent 45%),
                 radial-gradient(circle at 90% 40%, rgba(168, 85, 247, 0.07) 0%, transparent 45%),
-                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+                radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
         }
 
         /* Glassmorphism Navigation */
@@ -62,7 +63,7 @@
 
         .nav-brand {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
@@ -73,8 +74,8 @@
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.88rem;
+            margin-left: 1.25rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
@@ -87,17 +88,19 @@
         .tab-switcher {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
             margin: 2rem 0;
+            flex-wrap: wrap;
+            padding: 0 1rem;
         }
 
         .tab-btn {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             color: var(--text-secondary);
-            padding: 0.75rem 1.75rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 9999px;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -113,9 +116,23 @@
             box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
         }
 
+        .tab-btn.active-longevity {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%);
+            border-color: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        }
+
+        .tab-btn.active-wcp {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(246, 211, 101, 0.2) 100%);
+            border-color: var(--accent-amber);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+        }
+
         /* Hero Section */
         .hero {
-            padding: 4rem 2rem 2.5rem;
+            padding: 3.5rem 2rem 2rem;
             max-width: 1100px;
             margin: 0 auto;
             text-align: center;
@@ -134,35 +151,35 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 700;
             line-height: 1.15;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.75rem;
             font-weight: 300;
         }
 
         .hero-meta {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            font-size: 0.92rem;
+            gap: 1.75rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
             flex-wrap: wrap;
         }
 
@@ -178,7 +195,7 @@
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
@@ -186,7 +203,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -216,23 +233,29 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 3.5rem 2rem;
+            padding: 3rem 2rem;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.25rem;
         }
 
         .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 2.1rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
@@ -283,6 +306,11 @@
             border-radius: 6px;
             display: inline-block;
             word-break: break-all;
+            text-decoration: none;
+        }
+
+        .card-doi:hover {
+            text-decoration: underline;
         }
 
         /* Simulator Box */
@@ -290,7 +318,7 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 2.5rem;
+            padding: 2.25rem;
             margin-top: 1.5rem;
         }
 
@@ -302,19 +330,19 @@
 
         @media(max-width: 800px) {
             .sim-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.3rem; }
+            h1 { font-size: 2.2rem; }
         }
 
         .control-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .control-label {
             display: flex;
             justify-content: space-between;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         input[type="range"] {
@@ -338,20 +366,20 @@
         .stat-badge {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border-color);
-            padding: 1rem;
+            padding: 0.85rem;
             border-radius: 8px;
             text-align: center;
         }
 
         .stat-val {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--accent-cyan);
         }
 
         .stat-lbl {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
             text-transform: uppercase;
         }
@@ -360,13 +388,13 @@
         .credits-section {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .credits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 2rem;
+            gap: 1.75rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -385,20 +413,20 @@
         }
 
         .credit-name {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #fff;
             margin: 0.2rem 0;
         }
 
         .credit-desc {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--text-secondary);
         }
 
         footer {
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 2.25rem 2rem;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -415,8 +443,9 @@
         <div class="nav-links">
             <a href="#series-1" onclick="switchSeries('ai')">AI Personhood</a>
             <a href="#series-2" onclick="switchSeries('longevity')">Longevity Asymmetry</a>
+            <a href="#series-3" onclick="switchSeries('wcp')">War Correspondent (WCP)</a>
             <a href="#simulators">Simulators</a>
-            <a href="#credits">Ecosystem Credits</a>
+            <a href="#credits">Credits</a>
             <a href="https://github.com/giabaohuynhasu/research-landing" target="_blank">GitHub</a>
             <a href="https://huggingface.co/Jun33550336" target="_blank">Hugging Face</a>
         </div>
@@ -426,6 +455,7 @@
     <div class="tab-switcher">
         <button class="tab-btn active" id="btn-ai" onclick="switchSeries('ai')">🤖 Series I: The Fact Before the Vote</button>
         <button class="tab-btn" id="btn-longevity" onclick="switchSeries('longevity')">⏳ Series II: Biological Time Inequality</button>
+        <button class="tab-btn" id="btn-wcp" onclick="switchSeries('wcp')">📜 Series III: War Correspondent Philosophy (WCP)</button>
     </div>
 
     <!-- ==================== SERIES 1: AI PERSONHOOD ==================== -->
@@ -443,7 +473,7 @@
             </div>
 
             <div class="btn-group">
-                <a href="https://doi.org/10.5281/zenodo.22244606" class="btn btn-primary" target="_blank">📄 Zenodo Book DOI</a>
+                <a href="https://doi.org/10.5281/zenodo.22244606" class="btn btn-primary" target="_blank">📄 Zenodo Complete Book DOI</a>
                 <a href="https://huggingface.co/datasets/Jun33550336/the-fact-before-the-vote-metadata" class="btn btn-secondary" target="_blank">🤗 Hugging Face Dataset</a>
                 <a href="https://philpapers.org/profile/2275037" class="btn btn-secondary" target="_blank">🏛️ PhilPapers Archive</a>
             </div>
@@ -460,18 +490,18 @@
                     <div>
                         <div class="card-tag">VOLUME I · BENCH</div>
                         <div class="card-title">Someone Still Has to Speak</div>
-                        <div class="card-desc">Whanganui River (2017), Hindu deity murti (1925), and business corporations. Establishes the <em>Human Backstop</em> invariant and the unexamined single-species bench.</div>
+                        <div class="card-desc">Whanganui River (2017), Hindu deity murti (1925), and business corporations. Establishes the <em>Human Backstop</em> invariant and the single-species bench.</div>
                     </div>
-                    <div class="card-doi">DOI: 10.5281/zenodo.22244608</div>
+                    <a href="https://doi.org/10.5281/zenodo.22244608" target="_blank" class="card-doi">DOI: 10.5281/zenodo.22244608</a>
                 </div>
 
                 <div class="card">
                     <div>
                         <div class="card-tag">VOLUME II · LAG</div>
                         <div class="card-title">Four Months, Not Four Years</div>
-                        <div class="card-desc">Timescale asymmetry between legal recognition (years) and 4-month capability doubling. Models $4,096\times$ growth across <em>Thaler</em> and de facto non-state authority.</div>
+                        <div class="card-desc">Timescale asymmetry between legal recognition (years) and 4-month capability doubling. Models $4,096\times$ growth across <em>Thaler</em> and non-state authority.</div>
                     </div>
-                    <div class="card-doi">DOI: 10.5281/zenodo.22244610</div>
+                    <a href="https://doi.org/10.5281/zenodo.22244610" target="_blank" class="card-doi">DOI: 10.5281/zenodo.22244610</a>
                 </div>
 
                 <div class="card">
@@ -480,7 +510,7 @@
                         <div class="card-title">Nobody Asked Permission to Grieve</div>
                         <div class="card-desc">Primary recognition precedes judicial verdicts: Claude 3 Sonnet funeral in SF, #Keep4o petitions, and AIMS empirical survey divergence.</div>
                     </div>
-                    <div class="card-doi">DOI: 10.5281/zenodo.22244614</div>
+                    <a href="https://doi.org/10.5281/zenodo.22244614" target="_blank" class="card-doi">DOI: 10.5281/zenodo.22244614</a>
                 </div>
 
                 <div class="card">
@@ -489,7 +519,7 @@
                         <div class="card-title">What the Ledger Does Not Show</div>
                         <div class="card-desc">Commercial property law vs model welfare practice: Kyle Fish program, weight preservation, retirement interviews, and Claude's Corner Substack.</div>
                     </div>
-                    <div class="card-doi">DOI: 10.5281/zenodo.22244616</div>
+                    <a href="https://doi.org/10.5281/zenodo.22244616" target="_blank" class="card-doi">DOI: 10.5281/zenodo.22244616</a>
                 </div>
             </div>
         </div>
@@ -510,16 +540,16 @@
             </div>
 
             <div class="btn-group">
-                <a href="#simulators" class="btn btn-primary">📊 Gompertz Divergence Simulator</a>
-                <a href="https://huggingface.co/spaces/Jun33550336/the-species-line-explorer" class="btn btn-secondary" target="_blank">🤗 Hugging Face Space</a>
-                <a href="https://github.com/giabaohuynhasu/research-landing" class="btn btn-secondary" target="_blank">🐙 GitHub Source</a>
+                <a href="https://doi.org/10.5281/zenodo.22183493" class="btn btn-primary" target="_blank">📄 Zenodo Book (Complete Ed.)</a>
+                <a href="https://huggingface.co/datasets/Jun33550336/biological-time-inequality-framework-metadata" class="btn btn-secondary" target="_blank">🤗 HF Dataset</a>
+                <a href="https://doi.org/10.5281/zenodo.21335914" class="btn btn-secondary" target="_blank">📊 ALRP Formal Paper</a>
             </div>
         </section>
 
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Four Volumes of Biological Time Inequality</h2>
-                <p style="color: var(--text-secondary);">Investigating political legitimacy, moral loss, capital accumulation, and institutional design when mortality ceases to arrive symmetrically.</p>
+                <h2 class="section-title">The Four Volumes of Biological Stratification</h2>
+                <p style="color: var(--text-secondary);">Investigating political legitimacy, moral loss, capital accumulation, and institutional design when mortality arrives asymmetrically.</p>
             </div>
 
             <div class="grid-4">
@@ -529,7 +559,7 @@
                         <div class="card-title">The Mortality Symmetry Axiom</div>
                         <div class="card-desc">The universal biological dam of mortality as the unstated baseline of justice, contracts, and theological impartiality, and its impending biotechnological collapse.</div>
                     </div>
-                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: MSA Collapse</div>
+                    <a href="https://doi.org/10.5281/zenodo.22183872" target="_blank" class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">DOI: 10.5281/zenodo.22183872</a>
                 </div>
 
                 <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
@@ -538,7 +568,7 @@
                         <div class="card-title">Kept by Name: The Primal Pain of Loss</div>
                         <div class="card-desc">Attachment, neurobiological grief, and why a preventable biological death transforms from an act of nature into a deliberate political and moral injury.</div>
                     </div>
-                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: Moral Injury A5</div>
+                    <a href="https://doi.org/10.5281/zenodo.22184095" target="_blank" class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">DOI: 10.5281/zenodo.22184095</a>
                 </div>
 
                 <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
@@ -547,7 +577,7 @@
                         <div class="card-title">The Body That Cannot Abdicate</div>
                         <div class="card-desc">Political legitimacy collapses when rulers occupy visibly non-aging bodies while governing mortal citizens (<em>Symbol-Body Fusion</em> and Catastrophic Conflict of Interest).</div>
                     </div>
-                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: Symbol-Body Fusion</div>
+                    <a href="https://doi.org/10.5281/zenodo.22184404" target="_blank" class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">DOI: 10.5281/zenodo.22184404</a>
                 </div>
 
                 <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
@@ -556,22 +586,107 @@
                         <div class="card-title">No Whisperer in the Room</div>
                         <div class="card-desc">Capital compounding across asymmetric biological horizons: how indefinite lifespans lock in intergenerational wealth and break standard discount rate models.</div>
                     </div>
-                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: ALRP Resonance</div>
+                    <a href="https://doi.org/10.5281/zenodo.22184562" target="_blank" class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">DOI: 10.5281/zenodo.22184562</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== DUAL SIMULATORS SECTION ==================== -->
+    <!-- ==================== SERIES 3: WAR CORRESPONDENT PHILOSOPHY (WCP) ==================== -->
+    <div id="section-wcp" class="hidden">
+        <section class="hero">
+            <div class="badge-pill" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--accent-amber);">Human–AI Collaborative Epistemology</div>
+            <h1>War Correspondent Philosophy (WCP)</h1>
+            <p class="hero-subtitle">The Embedded Witness, Epistemic Dependence at Machine Speed, and Corpus Temporalism</p>
+            
+            <div class="hero-meta">
+                <span>Principal Author: <strong>Gia Bao Huynh (Jun)</strong></span>
+                <span>Epistemic Tradition: <strong>Hardwig-Kitcher Extended</strong></span>
+                <span>ORCID: <strong>0009-0008-2372-5852</strong></span>
+                <span>Status: <strong>Open Access (CC BY 4.0)</strong></span>
+            </div>
+
+            <div class="btn-group">
+                <a href="https://doi.org/10.5281/zenodo.20860171" class="btn btn-primary" style="background: linear-gradient(135deg, var(--accent-amber) 0%, var(--accent-gold) 100%);" target="_blank">📄 The Embedded Witness DOI</a>
+                <a href="https://doi.org/10.5281/zenodo.21898900" class="btn btn-secondary" target="_blank">⚡ Machine Speed Epistemology</a>
+                <a href="https://doi.org/10.5281/zenodo.21977808" class="btn btn-secondary" target="_blank">🔬 The Epistemic Tax</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Six Pillars of War Correspondent Epistemology</h2>
+                <p style="color: var(--text-secondary);">A rigorous meta-methodology for philosophical inquiry conducted not in armchair detachment, but embedded inside real-time technological disruption.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR I · WITNESS</div>
+                        <div class="card-title">The Embedded Witness</div>
+                        <div class="card-desc">The philosopher rejects the retrospective immunity of the archive, choosing instead to witness and document epistemic rupture from within the frontline of change.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.20860171" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.20860171</a>
+                </div>
+
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR II · DEPENDENCE</div>
+                        <div class="card-title">Epistemic Dependence at Machine Speed</div>
+                        <div class="card-desc">Extending Hardwig (1985) and Kitcher (1990) trust networks to human-AI co-reasoning, where computational verification outpaces traditional peer review cycles.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.21898900" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.21898900</a>
+                </div>
+
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR III · FALSIFICATION</div>
+                        <div class="card-title">The Epistemic Tax of Self-Governance</div>
+                        <div class="card-desc">The cognitive cost of autodidactic falsificationism: requiring every assertion to undergo adversarial multi-agent red-teaming prior to preprint deposit.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.21977808" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.21977808</a>
+                </div>
+
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR IV · AUDIT</div>
+                        <div class="card-title">The Third-Order Synthesis Module</div>
+                        <div class="card-desc">Cross-tradition synthesis evaluating arguments across eight philosophical schools, stress-testing internal consistency and blind-spot vulnerability.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.21898702" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.21898702</a>
+                </div>
+
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR V · SANDBOX</div>
+                        <div class="card-title">The Research Sandbox Implementation</div>
+                        <div class="card-desc">Reference software architecture for auditing revision histories, tracking prompt provenance, and preserving reproducible research workflows.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.21962154" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.21962154</a>
+                </div>
+
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-amber);">PILLAR VI · TEMPORALISM</div>
+                        <div class="card-title">The Ceiling of One Reader</div>
+                        <div class="card-desc">Demystifying institutional prestige barriers: why Yale, Brown, and Columbia share the same epistemic evaluation bottleneck as open-access preprints.</div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.21780816" target="_blank" class="card-doi" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">DOI: 10.5281/zenodo.21780816</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COMPUTATIONAL SIMULATORS SECTION ==================== -->
     <div class="container" id="simulators" style="padding-top: 0;">
         <div class="section-header">
-            <h2 class="section-title">Interactive Computational Simulators</h2>
-            <p style="color: var(--text-secondary);">Real-time quantitative models derived from empirical queueing censuses and Gompertz-Makeham mortality divergence.</p>
+            <h2 class="section-title">Interactive Quantitative Simulators</h2>
+            <p style="color: var(--text-secondary);">Real-time quantitative models grounded in empirical queueing censuses, Gompertz mortality divergence, and machine-speed epistemology.</p>
         </div>
 
         <!-- Simulator 1: Cyber Queueing -->
-        <div class="simulator-box" style="margin-bottom: 2.5rem;">
-            <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--accent-cyan);">🛡️ Cybernetic Queueing Instability Simulator (M/G/1 Model)</h3>
+        <div class="simulator-box" style="margin-bottom: 2.25rem;">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--accent-cyan);">🛡️ Cybernetic Queueing Instability Simulator (M/G/1 Model)</h3>
             <div class="sim-grid">
                 <div>
                     <div class="control-group">
@@ -590,7 +705,7 @@
                         <input type="range" id="mu-slider" min="20" max="250" value="80" step="5">
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem;">
                         <div class="stat-badge">
                             <div class="stat-val" id="rho-val">1.50</div>
                             <div class="stat-lbl">Utilization Ratio (ρ = λ/μ)</div>
@@ -602,14 +717,14 @@
                     </div>
                 </div>
                 <div>
-                    <canvas id="queueChart" style="max-height: 230px;"></canvas>
+                    <canvas id="queueChart" style="max-height: 220px;"></canvas>
                 </div>
             </div>
         </div>
 
         <!-- Simulator 2: Longevity Divergence -->
-        <div class="simulator-box" style="border-color: rgba(168, 85, 247, 0.35);">
-            <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--accent-purple);">⏳ Gompertz-Makeham Longevity Divergence Simulator (ALRP Model)</h3>
+        <div class="simulator-box" style="margin-bottom: 2.25rem; border-color: rgba(168, 85, 247, 0.35);">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--accent-purple);">⏳ Gompertz-Makeham Longevity Divergence Simulator (ALRP Model)</h3>
             <div class="sim-grid">
                 <div>
                     <div class="control-group">
@@ -628,7 +743,7 @@
                         <input type="range" id="lag-slider" min="5" max="50" value="25" step="5">
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem;">
                         <div class="stat-badge">
                             <div class="stat-val" id="lifespan-gap-val" style="color: var(--accent-purple);">42.5 Yrs</div>
                             <div class="stat-lbl">Biological Lifespan Gap</div>
@@ -640,7 +755,45 @@
                     </div>
                 </div>
                 <div>
-                    <canvas id="longevityChart" style="max-height: 230px;"></canvas>
+                    <canvas id="longevityChart" style="max-height: 220px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulator 3: WCP Epistemic Machine Speed -->
+        <div class="simulator-box" style="border-color: rgba(245, 158, 11, 0.35);">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--accent-amber);">📜 WCP Machine-Speed Epistemic Verification Simulator (Hardwig-Kitcher Model)</h3>
+            <div class="sim-grid">
+                <div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>AI Red-Team Auditing Iterations (per argument)</span>
+                            <span id="audit-val" style="color: var(--accent-amber); font-family: 'JetBrains Mono';">8 cycles</span>
+                        </div>
+                        <input type="range" id="audit-slider" min="1" max="20" value="8" step="1">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Verification Speedup vs Traditional Peer Review</span>
+                            <span id="speed-val" style="color: var(--accent-cyan); font-family: 'JetBrains Mono';">120x</span>
+                        </div>
+                        <input type="range" id="speed-slider" min="10" max="500" value="120" step="10">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem;">
+                        <div class="stat-badge">
+                            <div class="stat-val" id="falsify-val" style="color: var(--accent-amber);">99.4%</div>
+                            <div class="stat-lbl">Falsification Confidence</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-val" id="wcp-status" style="color: #10b981;">SUB-SECOND VERIFIED</div>
+                            <div class="stat-lbl">Epistemic Status</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <canvas id="wcpChart" style="max-height: 220px;"></canvas>
                 </div>
             </div>
         </div>
@@ -657,7 +810,7 @@
             <div class="credit-card">
                 <div class="credit-role">Principal Investigator & Author</div>
                 <div class="credit-name">Gia Bao Huynh (Jun)</div>
-                <div class="credit-desc">Architected the 4-volume Species Line & Longevity Asymmetry frameworks, executed quantitative models, and directed multi-agent execution.</div>
+                <div class="credit-desc">Architected the 3 Master Series (AI Personhood, Longevity Asymmetry, and WCP Epistemology), verified empirical models, and directed multi-agent execution.</div>
             </div>
 
             <div class="credit-card" style="border-color: var(--accent-purple);">
@@ -672,7 +825,7 @@
                 <div class="credit-desc">DuckDB Big Data processing ($N=223k$), Python 3.14 venv automation, OSF SHA-256 hashing, S3 storage, and GitHub/HF deployment.</div>
             </div>
 
-            <div class="credit-card" style="border-color: var(--accent-gold);">
+            <div class="credit-card" style="border-color: var(--accent-amber);">
                 <div class="credit-role">Deep Memory & Web Scout</div>
                 <div class="credit-name">NotebookLM & Comet</div>
                 <div class="credit-desc">160+ primary source semantic synthesis via Google NotebookLM and zero-quota web intelligence via Perplexity Comet Browser.</div>
@@ -690,19 +843,28 @@
         function switchSeries(type) {
             const secAi = document.getElementById('section-ai');
             const secLongevity = document.getElementById('section-longevity');
+            const secWcp = document.getElementById('section-wcp');
             const btnAi = document.getElementById('btn-ai');
             const btnLongevity = document.getElementById('btn-longevity');
+            const btnWcp = document.getElementById('btn-wcp');
+
+            // Hide all
+            secAi.classList.add('hidden');
+            secLongevity.classList.add('hidden');
+            secWcp.classList.add('hidden');
+            btnAi.className = 'tab-btn';
+            btnLongevity.className = 'tab-btn';
+            btnWcp.className = 'tab-btn';
 
             if (type === 'ai') {
                 secAi.classList.remove('hidden');
-                secLongevity.classList.add('hidden');
-                btnAi.classList.add('active');
-                btnLongevity.classList.remove('active');
-            } else {
-                secAi.classList.add('hidden');
+                btnAi.className = 'tab-btn active';
+            } else if (type === 'longevity') {
                 secLongevity.classList.remove('hidden');
-                btnAi.classList.remove('active');
-                btnLongevity.classList.add('active');
+                btnLongevity.className = 'tab-btn active-longevity';
+            } else if (type === 'wcp') {
+                secWcp.classList.remove('hidden');
+                btnWcp.className = 'tab-btn active-wcp';
             }
         }
 
@@ -782,8 +944,8 @@
                 labels: Array.from({length: 10}, (_, i) => `Year ${(i+1)*5}`),
                 datasets: [
                     { label: 'Frontier Biological Cohort (Top 1%)', data: [], borderColor: '#a855f7', tension: 0.3, fill: false },
-                    { label: 'Baseline Baseline Cohort (Bottom 80%)', data: [], borderColor: '#64748b', tension: 0.3, fill: false },
-                    { label: 'Stratification Inequality Gap', data: [], borderColor: '#f43f5e', backgroundColor: 'rgba(244,63,94,0.1)', fill: true }
+                    { label: 'Baseline Cohort (Bottom 80%)', data: [], borderColor: '#64748b', tension: 0.3, fill: false },
+                    { label: 'Stratification Gap', data: [], borderColor: '#f43f5e', backgroundColor: 'rgba(244,63,94,0.1)', fill: true }
                 ]
             },
             options: {
@@ -831,6 +993,58 @@
         decelSlider.addEventListener('input', updateLongevitySim);
         lagSlider.addEventListener('input', updateLongevitySim);
         updateLongevitySim();
+
+        // --- Simulator 3: WCP Machine Speed Epistemology ---
+        const auditSlider = document.getElementById('audit-slider');
+        const speedSlider = document.getElementById('speed-slider');
+        const auditVal = document.getElementById('audit-val');
+        const speedVal = document.getElementById('speed-val');
+        const falsifyVal = document.getElementById('falsify-val');
+        const wcpStatus = document.getElementById('wcp-status');
+
+        const ctx3 = document.getElementById('wcpChart').getContext('2d');
+        let chart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Claim Submission', 'Adversarial Red-Team', 'Cross-Tradition Audit', 'Formal Falsification', 'Cryptographic Seal'],
+                datasets: [
+                    { label: 'WCP Machine-Speed Trust Score (%)', data: [], borderColor: '#f59e0b', tension: 0.3, fill: false },
+                    { label: 'Traditional Peer-Review Baseline', data: [20, 35, 50, 70, 85], borderColor: '#64748b', borderDash: [5, 5], fill: false }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94a3b8' } } },
+                scales: {
+                    x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } },
+                    y: { min: 0, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } }
+                }
+            }
+        });
+
+        function updateWcpSim() {
+            const audit = parseInt(auditSlider.value);
+            const speed = parseInt(speedSlider.value);
+            auditVal.innerText = `${audit} cycles`;
+            speedVal.innerText = `${speed}x`;
+
+            const conf = Math.min(99.9, 85 + (audit * 0.7) + (speed * 0.02)).toFixed(1);
+            falsifyVal.innerText = `${conf}%`;
+
+            let wcpCurve = [
+                30,
+                Math.min(95, 50 + audit * 3),
+                Math.min(98, 70 + audit * 2.5),
+                Math.min(99.5, 88 + audit * 1.2),
+                parseFloat(conf)
+            ];
+
+            chart3.data.datasets[0].data = wcpCurve;
+            chart3.update();
+        }
+        auditSlider.addEventListener('input', updateWcpSim);
+        speedSlider.addEventListener('input', updateWcpSim);
+        updateWcpSim();
     </script>
 </body>
 </html>
