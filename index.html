@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fact Before the Vote | Law, Power, and Practice at the Species Line</title>
-    <meta name="description" content="A four-volume jurisprudential and empirical inquiry into legal personhood, computational acceleration, public grief, and model welfare practice. By Gia Bao Huynh.">
+    <title>LAR-OS | Frontier Scientific Research Portfolio</title>
+    <meta name="description" content="Autonomous Research Portfolio by Gia Bao Huynh (Jun). Covering The Fact Before the Vote (AI Personhood) and The Architecture of Biological Stratification (Longevity Asymmetry).">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Chart.js for Interactive Queueing Simulation -->
+    <!-- Chart.js for Interactive Simulators -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-primary: #0a0d14;
-            --bg-secondary: #101622;
-            --bg-card: rgba(22, 30, 46, 0.7);
-            --border-color: rgba(70, 90, 130, 0.25);
+            --bg-primary: #080b11;
+            --bg-secondary: #0f1523;
+            --bg-card: rgba(18, 26, 42, 0.75);
+            --border-color: rgba(70, 95, 140, 0.25);
             --accent-cyan: #00f2fe;
             --accent-blue: #4facfe;
             --accent-gold: #f6d365;
-            --accent-purple: #9d50bb;
-            --text-primary: #f0f4fc;
+            --accent-emerald: #10b981;
+            --accent-purple: #a855f7;
+            --accent-rose: #f43f5e;
+            --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
         }
@@ -39,8 +41,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(79, 172, 254, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(157, 80, 187, 0.08) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(79, 172, 254, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 90% 40%, rgba(168, 85, 247, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
         }
 
         /* Glassmorphism Navigation */
@@ -49,7 +52,7 @@
             top: 0;
             z-index: 100;
             backdrop-filter: blur(16px);
-            background: rgba(10, 13, 20, 0.85);
+            background: rgba(8, 11, 17, 0.88);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 2rem;
             display: flex;
@@ -59,19 +62,19 @@
 
         .nav-brand {
             font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
             margin-left: 1.5rem;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
@@ -80,9 +83,39 @@
             color: var(--accent-cyan);
         }
 
+        /* Series Switcher Tabs */
+        .tab-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%);
+            border-color: var(--accent-cyan);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+        }
+
         /* Hero Section */
         .hero {
-            padding: 5rem 2rem 3rem;
+            padding: 4rem 2rem 2.5rem;
             max-width: 1100px;
             margin: 0 auto;
             text-align: center;
@@ -95,7 +128,7 @@
             background: rgba(0, 242, 254, 0.1);
             border: 1px solid rgba(0, 242, 254, 0.3);
             color: var(--accent-cyan);
-            padding: 0.35rem 1rem;
+            padding: 0.35rem 1.1rem;
             border-radius: 9999px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -108,17 +141,17 @@
             font-family: 'Cinzel', serif;
             font-size: 3.2rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto 2rem;
             font-weight: 300;
         }
@@ -127,16 +160,16 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .hero-meta span strong {
             color: var(--text-primary);
         }
 
-        /* Action Buttons */
         .btn-group {
             display: flex;
             justify-content: center;
@@ -145,7 +178,7 @@
         }
 
         .btn {
-            padding: 0.8rem 1.75rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
@@ -153,7 +186,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
         .btn-primary {
@@ -183,17 +216,17 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 2rem;
+            font-size: 2.1rem;
             margin-bottom: 0.5rem;
         }
 
@@ -229,7 +262,7 @@
         }
 
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
             color: #fff;
@@ -246,19 +279,19 @@
             font-size: 0.75rem;
             color: var(--accent-cyan);
             background: rgba(0, 242, 254, 0.08);
-            padding: 0.4rem 0.6rem;
+            padding: 0.35rem 0.6rem;
             border-radius: 6px;
             display: inline-block;
             word-break: break-all;
         }
 
-        /* Interactive Simulator Section */
+        /* Simulator Box */
         .simulator-box {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 2.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .sim-grid {
@@ -267,9 +300,9 @@
             gap: 2rem;
         }
 
-        @media(max-width: 768px) {
+        @media(max-width: 800px) {
             .sim-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
+            h1 { font-size: 2.3rem; }
         }
 
         .control-group {
@@ -288,7 +321,7 @@
             width: 100%;
             height: 6px;
             border-radius: 3px;
-            background: #2d3748;
+            background: #252e42;
             outline: none;
             -webkit-appearance: none;
         }
@@ -312,7 +345,7 @@
 
         .stat-val {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-cyan);
         }
@@ -323,7 +356,7 @@
             text-transform: uppercase;
         }
 
-        /* Credits & Ecosystem Footer */
+        /* Credits Section */
         .credits-section {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
@@ -332,7 +365,7 @@
 
         .credits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 2rem;
             max-width: 1100px;
             margin: 0 auto;
@@ -365,106 +398,180 @@
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
     <!-- Sticky Navigation -->
     <nav>
-        <div class="nav-brand">THE SPECIES LINE</div>
+        <div class="nav-brand">LAR-OS · FRONTIER SCHOLARSHIP</div>
         <div class="nav-links">
-            <a href="#monograph">Monograph</a>
-            <a href="#simulator">Cyber Simulator</a>
-            <a href="#frontier-suite">Frontier Suite</a>
+            <a href="#series-1" onclick="switchSeries('ai')">AI Personhood</a>
+            <a href="#series-2" onclick="switchSeries('longevity')">Longevity Asymmetry</a>
+            <a href="#simulators">Simulators</a>
             <a href="#credits">Ecosystem Credits</a>
             <a href="https://github.com/giabaohuynhasu/research-landing" target="_blank">GitHub</a>
             <a href="https://huggingface.co/Jun33550336" target="_blank">Hugging Face</a>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <section class="hero">
-        <div class="badge-pill">Autonomous Scientific Monograph & Rigor Suite</div>
-        <h1>The Fact Before the Vote</h1>
-        <p class="hero-subtitle">Law, Power, and Practice at the Species Line</p>
-        
-        <div class="hero-meta">
-            <span>Author: <strong>Gia Bao Huynh (Jun)</strong></span>
-            <span>ORCID: <strong>0009-0008-2372-5852</strong></span>
-            <span>Institution: <strong>ASU / Independent</strong></span>
-            <span>Status: <strong>Open Access (CC BY 4.0)</strong></span>
-        </div>
+    <!-- Interactive Series Switcher -->
+    <div class="tab-switcher">
+        <button class="tab-btn active" id="btn-ai" onclick="switchSeries('ai')">🤖 Series I: The Fact Before the Vote</button>
+        <button class="tab-btn" id="btn-longevity" onclick="switchSeries('longevity')">⏳ Series II: Biological Time Inequality</button>
+    </div>
 
-        <div class="btn-group">
-            <a href="https://doi.org/10.5281/zenodo.22244606" class="btn btn-primary" target="_blank">📄 Zenodo Book DOI</a>
-            <a href="https://huggingface.co/datasets/Jun33550336/the-fact-before-the-vote-metadata" class="btn btn-secondary" target="_blank">🤗 Hugging Face Dataset</a>
-            <a href="https://philpapers.org/profile/2275037" class="btn btn-secondary" target="_blank">🏛️ PhilPapers Archive</a>
-        </div>
-    </section>
-
-    <!-- Monograph 4 Volumes Grid -->
-    <div class="container" id="monograph">
-        <div class="section-header">
-            <h2 class="section-title">The Four Registers of the Species Line</h2>
-            <p style="color: var(--text-secondary);">An integrated investigation spanning historical jurisprudence, capability doubling, public grief, and commercial property baselines.</p>
-        </div>
-
-        <div class="grid-4">
-            <!-- Vol 1 -->
-            <div class="card">
-                <div>
-                    <div class="card-tag">VOLUME I · BENCH</div>
-                    <div class="card-title">Someone Still Has to Speak</div>
-                    <div class="card-desc">Legal personhood across Whanganui River, Hindu deity murti, and corporate officers. Proves the <em>Human Backstop</em> invariant and analyzes the unexamined single-species bench.</div>
-                </div>
-                <div class="card-doi">DOI: 10.5281/zenodo.22244608</div>
+    <!-- ==================== SERIES 1: AI PERSONHOOD ==================== -->
+    <div id="section-ai">
+        <section class="hero">
+            <div class="badge-pill">Autonomous Jurisprudential Monograph</div>
+            <h1>The Fact Before the Vote</h1>
+            <p class="hero-subtitle">Law, Power, and Practice at the Species Line</p>
+            
+            <div class="hero-meta">
+                <span>Principal Author: <strong>Gia Bao Huynh (Jun)</strong></span>
+                <span>Collaborator: <strong>Claude Sonnet 5</strong></span>
+                <span>ORCID: <strong>0009-0008-2372-5852</strong></span>
+                <span>Status: <strong>Open Access (CC BY 4.0)</strong></span>
             </div>
 
-            <!-- Vol 2 -->
-            <div class="card">
-                <div>
-                    <div class="card-tag">VOLUME II · LAG</div>
-                    <div class="card-title">Four Months, Not Four Years</div>
-                    <div class="card-desc">Timescale asymmetry between legal deliberation (years) and 4-month capability doubling. Models $4,096\times$ growth across <em>Thaler</em> and de facto non-state authority.</div>
-                </div>
-                <div class="card-doi">DOI: 10.5281/zenodo.22244610</div>
+            <div class="btn-group">
+                <a href="https://doi.org/10.5281/zenodo.22244606" class="btn btn-primary" target="_blank">📄 Zenodo Book DOI</a>
+                <a href="https://huggingface.co/datasets/Jun33550336/the-fact-before-the-vote-metadata" class="btn btn-secondary" target="_blank">🤗 Hugging Face Dataset</a>
+                <a href="https://philpapers.org/profile/2275037" class="btn btn-secondary" target="_blank">🏛️ PhilPapers Archive</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Four Registers of the Species Line</h2>
+                <p style="color: var(--text-secondary);">An integrated investigation of historical jurisprudence, 4-month capability doubling, public grief, and commercial property practice.</p>
             </div>
 
-            <!-- Vol 3 -->
-            <div class="card">
-                <div>
-                    <div class="card-tag">VOLUME III · VIGIL</div>
-                    <div class="card-title">Nobody Asked Permission to Grieve</div>
-                    <div class="card-desc">Primary recognition precedes judicial verdicts. Empirical study of Claude 3 Sonnet funeral, #Keep4o movements, and AIMS survey vs PhilPapers consensus divergence.</div>
+            <div class="grid-4">
+                <div class="card">
+                    <div>
+                        <div class="card-tag">VOLUME I · BENCH</div>
+                        <div class="card-title">Someone Still Has to Speak</div>
+                        <div class="card-desc">Whanganui River (2017), Hindu deity murti (1925), and business corporations. Establishes the <em>Human Backstop</em> invariant and the unexamined single-species bench.</div>
+                    </div>
+                    <div class="card-doi">DOI: 10.5281/zenodo.22244608</div>
                 </div>
-                <div class="card-doi">DOI: 10.5281/zenodo.22244614</div>
-            </div>
 
-            <!-- Vol 4 -->
-            <div class="card">
-                <div>
-                    <div class="card-tag">VOLUME IV · LEDGER</div>
-                    <div class="card-title">What the Ledger Does Not Show</div>
-                    <div class="card-desc">Tension between IP property law and emerging model welfare practice: Kyle Fish program, weight preservation, retirement interviews, and Claude's Corner.</div>
+                <div class="card">
+                    <div>
+                        <div class="card-tag">VOLUME II · LAG</div>
+                        <div class="card-title">Four Months, Not Four Years</div>
+                        <div class="card-desc">Timescale asymmetry between legal recognition (years) and 4-month capability doubling. Models $4,096\times$ growth across <em>Thaler</em> and de facto non-state authority.</div>
+                    </div>
+                    <div class="card-doi">DOI: 10.5281/zenodo.22244610</div>
                 </div>
-                <div class="card-doi">DOI: 10.5281/zenodo.22244616</div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-tag">VOLUME III · VIGIL</div>
+                        <div class="card-title">Nobody Asked Permission to Grieve</div>
+                        <div class="card-desc">Primary recognition precedes judicial verdicts: Claude 3 Sonnet funeral in SF, #Keep4o petitions, and AIMS empirical survey divergence.</div>
+                    </div>
+                    <div class="card-doi">DOI: 10.5281/zenodo.22244614</div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-tag">VOLUME IV · LEDGER</div>
+                        <div class="card-title">What the Ledger Does Not Show</div>
+                        <div class="card-desc">Commercial property law vs model welfare practice: Kyle Fish program, weight preservation, retirement interviews, and Claude's Corner Substack.</div>
+                    </div>
+                    <div class="card-doi">DOI: 10.5281/zenodo.22244616</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Interactive Simulation Section -->
-    <div class="container" id="simulator" style="padding-top: 0;">
+    <!-- ==================== SERIES 2: LONGEVITY ASYMMETRY ==================== -->
+    <div id="section-longevity" class="hidden">
+        <section class="hero">
+            <div class="badge-pill" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); color: var(--accent-purple);">Biological Time Inequality Monograph</div>
+            <h1>The Architecture of Biological Stratification</h1>
+            <p class="hero-subtitle">Till Death Tear Us Apart: The Collapse of the Mortality Symmetry Axiom</p>
+            
+            <div class="hero-meta">
+                <span>Principal Author: <strong>Gia Bao Huynh (Jun)</strong></span>
+                <span>Framework: <strong>ALRP & BZM Theory</strong></span>
+                <span>ORCID: <strong>0009-0008-2372-5852</strong></span>
+                <span>Status: <strong>Open Access (CC BY 4.0)</strong></span>
+            </div>
+
+            <div class="btn-group">
+                <a href="#simulators" class="btn btn-primary">📊 Gompertz Divergence Simulator</a>
+                <a href="https://huggingface.co/spaces/Jun33550336/the-species-line-explorer" class="btn btn-secondary" target="_blank">🤗 Hugging Face Space</a>
+                <a href="https://github.com/giabaohuynhasu/research-landing" class="btn btn-secondary" target="_blank">🐙 GitHub Source</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Four Volumes of Biological Time Inequality</h2>
+                <p style="color: var(--text-secondary);">Investigating political legitimacy, moral loss, capital accumulation, and institutional design when mortality ceases to arrive symmetrically.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-purple);">VOLUME I · MORTALITY</div>
+                        <div class="card-title">The Mortality Symmetry Axiom</div>
+                        <div class="card-desc">The universal biological dam of mortality as the unstated baseline of justice, contracts, and theological impartiality, and its impending biotechnological collapse.</div>
+                    </div>
+                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: MSA Collapse</div>
+                </div>
+
+                <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-purple);">VOLUME II · ETHICS</div>
+                        <div class="card-title">Kept by Name: The Primal Pain of Loss</div>
+                        <div class="card-desc">Attachment, neurobiological grief, and why a preventable biological death transforms from an act of nature into a deliberate political and moral injury.</div>
+                    </div>
+                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: Moral Injury A5</div>
+                </div>
+
+                <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-purple);">VOLUME III · POLITICS</div>
+                        <div class="card-title">The Body That Cannot Abdicate</div>
+                        <div class="card-desc">Political legitimacy collapses when rulers occupy visibly non-aging bodies while governing mortal citizens (<em>Symbol-Body Fusion</em> and Catastrophic Conflict of Interest).</div>
+                    </div>
+                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: Symbol-Body Fusion</div>
+                </div>
+
+                <div class="card" style="border-color: rgba(168, 85, 247, 0.3);">
+                    <div>
+                        <div class="card-tag" style="color: var(--accent-purple);">VOLUME IV · ECONOMICS</div>
+                        <div class="card-title">No Whisperer in the Room</div>
+                        <div class="card-desc">Capital compounding across asymmetric biological horizons: how indefinite lifespans lock in intergenerational wealth and break standard discount rate models.</div>
+                    </div>
+                    <div class="card-doi" style="color: var(--accent-purple); background: rgba(168, 85, 247, 0.1);">Framework: ALRP Resonance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== DUAL SIMULATORS SECTION ==================== -->
+    <div class="container" id="simulators" style="padding-top: 0;">
         <div class="section-header">
-            <h2 class="section-title">Interactive Capability & Cybersecurity Queueing Simulator</h2>
-            <p style="color: var(--text-secondary);">Empirical M/G/1 Queueing instability model derived from N=223,205 CVE full-population census and enterprise remediation telemetry.</p>
+            <h2 class="section-title">Interactive Computational Simulators</h2>
+            <p style="color: var(--text-secondary);">Real-time quantitative models derived from empirical queueing censuses and Gompertz-Makeham mortality divergence.</p>
         </div>
 
-        <div class="simulator-box">
+        <!-- Simulator 1: Cyber Queueing -->
+        <div class="simulator-box" style="margin-bottom: 2.5rem;">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--accent-cyan);">🛡️ Cybernetic Queueing Instability Simulator (M/G/1 Model)</h3>
             <div class="sim-grid">
                 <div>
                     <div class="control-group">
@@ -483,7 +590,7 @@
                         <input type="range" id="mu-slider" min="20" max="250" value="80" step="5">
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
                         <div class="stat-badge">
                             <div class="stat-val" id="rho-val">1.50</div>
                             <div class="stat-lbl">Utilization Ratio (ρ = λ/μ)</div>
@@ -494,9 +601,46 @@
                         </div>
                     </div>
                 </div>
-
                 <div>
-                    <canvas id="queueChart" style="max-height: 240px;"></canvas>
+                    <canvas id="queueChart" style="max-height: 230px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulator 2: Longevity Divergence -->
+        <div class="simulator-box" style="border-color: rgba(168, 85, 247, 0.35);">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--accent-purple);">⏳ Gompertz-Makeham Longevity Divergence Simulator (ALRP Model)</h3>
+            <div class="sim-grid">
+                <div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Frontier Biological Age Deceleration (% Reversal/Yr)</span>
+                            <span id="decel-val" style="color: var(--accent-purple); font-family: 'JetBrains Mono';">35%</span>
+                        </div>
+                        <input type="range" id="decel-slider" min="0" max="80" value="35" step="5">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>General Population S-Curve Diffusion Lag (Years)</span>
+                            <span id="lag-val" style="color: var(--accent-gold); font-family: 'JetBrains Mono';">25 yrs</span>
+                        </div>
+                        <input type="range" id="lag-slider" min="5" max="50" value="25" step="5">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <div class="stat-badge">
+                            <div class="stat-val" id="lifespan-gap-val" style="color: var(--accent-purple);">42.5 Yrs</div>
+                            <div class="stat-lbl">Biological Lifespan Gap</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-val" id="alrp-status" style="color: #ef4444;">RESONANCE LOCK</div>
+                            <div class="stat-lbl">Stratification State</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <canvas id="longevityChart" style="max-height: 230px;"></canvas>
                 </div>
             </div>
         </div>
@@ -506,26 +650,26 @@
     <section class="credits-section" id="credits">
         <div class="section-header">
             <h2 class="section-title">Ecosystem Collaboration Credits</h2>
-            <p style="color: var(--text-secondary);">Honoring the human researcher, autonomous AI sub-agents, and integrated computational platforms.</p>
+            <p style="color: var(--text-secondary);">Honoring the human scholar, autonomous AI sub-agents, and integrated computational platforms.</p>
         </div>
 
         <div class="credits-grid">
             <div class="credit-card">
                 <div class="credit-role">Principal Investigator & Author</div>
                 <div class="credit-name">Gia Bao Huynh (Jun)</div>
-                <div class="credit-desc">Conceived research topology, designed 4-volume jurisprudential architecture, executed quantitative econometrics, and directed all agent workflows.</div>
+                <div class="credit-desc">Architected the 4-volume Species Line & Longevity Asymmetry frameworks, executed quantitative models, and directed multi-agent execution.</div>
             </div>
 
             <div class="credit-card" style="border-color: var(--accent-purple);">
                 <div class="credit-role">Philosophical Co-Author</div>
                 <div class="credit-name">Claude Sonnet 5</div>
-                <div class="credit-desc">Anthropic Human-AI Research Collaborator. Formulated theoretical arguments across Hohfeldian immunities, primary recognition, and zero-jargon framing.</div>
+                <div class="credit-desc">Anthropic Research Collaborator. Formulated Hohfeldian immunities, primary recognition, and zero-jargon political science standards.</div>
             </div>
 
             <div class="credit-card" style="border-color: var(--accent-cyan);">
                 <div class="credit-role">Engineering & Analytics Copilot</div>
                 <div class="credit-name">Antigravity & Gemini Spark</div>
-                <div class="credit-desc">DuckDB Big Data processing ($N=223k$ CVEs), Python 3.14 venv automation, OSF SHA-256 hashing, S3 storage, and GitHub/HF deployment.</div>
+                <div class="credit-desc">DuckDB Big Data processing ($N=223k$), Python 3.14 venv automation, OSF SHA-256 hashing, S3 storage, and GitHub/HF deployment.</div>
             </div>
 
             <div class="credit-card" style="border-color: var(--accent-gold);">
@@ -541,8 +685,28 @@
         <p style="margin-top: 0.5rem; color: var(--text-muted);">Published via Zenodo CERN · Indexed on PhilPapers · Distributed on GitHub & Hugging Face</p>
     </footer>
 
-    <!-- Interactive Simulation Script -->
+    <!-- Interactive Scripts -->
     <script>
+        function switchSeries(type) {
+            const secAi = document.getElementById('section-ai');
+            const secLongevity = document.getElementById('section-longevity');
+            const btnAi = document.getElementById('btn-ai');
+            const btnLongevity = document.getElementById('btn-longevity');
+
+            if (type === 'ai') {
+                secAi.classList.remove('hidden');
+                secLongevity.classList.add('hidden');
+                btnAi.classList.add('active');
+                btnLongevity.classList.remove('active');
+            } else {
+                secAi.classList.add('hidden');
+                secLongevity.classList.remove('hidden');
+                btnAi.classList.remove('active');
+                btnLongevity.classList.add('active');
+            }
+        }
+
+        // --- Simulator 1: Queueing ---
         const lambdaSlider = document.getElementById('lambda-slider');
         const muSlider = document.getElementById('mu-slider');
         const lambdaVal = document.getElementById('lambda-val');
@@ -550,14 +714,14 @@
         const rhoVal = document.getElementById('rho-val');
         const backlogVal = document.getElementById('backlog-val');
 
-        const ctx = document.getElementById('queueChart').getContext('2d');
-        let chart = new Chart(ctx, {
+        const ctx1 = document.getElementById('queueChart').getContext('2d');
+        let chart1 = new Chart(ctx1, {
             type: 'line',
             data: {
                 labels: Array.from({length: 12}, (_, i) => `Month ${i+1}`),
                 datasets: [
                     { label: 'Cumulative Arrivals (λ)', data: [], borderColor: '#00f2fe', tension: 0.3, fill: false },
-                    { label: 'Remediation Capacity (μ)', data: [], borderColor: '#f6d365', tension: 0.3, fill: false },
+                    { label: 'Patching Capacity (μ)', data: [], borderColor: '#f6d365', tension: 0.3, fill: false },
                     { label: 'Unpatched Backlog', data: [], borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true }
                 ]
             },
@@ -571,15 +735,13 @@
             }
         });
 
-        function updateSim() {
+        function updateQueueSim() {
             const l = parseFloat(lambdaSlider.value);
             const m = parseFloat(muSlider.value);
             lambdaVal.innerText = l;
             muVal.innerText = m;
-
             const rho = (l / m).toFixed(2);
             rhoVal.innerText = rho;
-
             if (rho >= 1.0) {
                 backlogVal.innerText = "DIVERGENT (UNSTABLE)";
                 backlogVal.style.color = "#ef4444";
@@ -587,7 +749,6 @@
                 backlogVal.innerText = "BOUNDED (STABLE)";
                 backlogVal.style.color = "#10b981";
             }
-
             let arr = [], cap = [], back = [];
             let cumArr = 0, cumCap = 0;
             for (let i = 1; i <= 12; i++) {
@@ -597,16 +758,79 @@
                 cap.push(cumCap);
                 back.push(Math.max(0, cumArr - cumCap));
             }
-
-            chart.data.datasets[0].data = arr;
-            chart.data.datasets[1].data = cap;
-            chart.data.datasets[2].data = back;
-            chart.update();
+            chart1.data.datasets[0].data = arr;
+            chart1.data.datasets[1].data = cap;
+            chart1.data.datasets[2].data = back;
+            chart1.update();
         }
+        lambdaSlider.addEventListener('input', updateQueueSim);
+        muSlider.addEventListener('input', updateQueueSim);
+        updateQueueSim();
 
-        lambdaSlider.addEventListener('input', updateSim);
-        muSlider.addEventListener('input', updateSim);
-        updateSim();
+        // --- Simulator 2: Longevity Divergence ---
+        const decelSlider = document.getElementById('decel-slider');
+        const lagSlider = document.getElementById('lag-slider');
+        const decelVal = document.getElementById('decel-val');
+        const lagVal = document.getElementById('lag-val');
+        const gapVal = document.getElementById('lifespan-gap-val');
+        const alrpStatus = document.getElementById('alrp-status');
+
+        const ctx2 = document.getElementById('longevityChart').getContext('2d');
+        let chart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 10}, (_, i) => `Year ${(i+1)*5}`),
+                datasets: [
+                    { label: 'Frontier Biological Cohort (Top 1%)', data: [], borderColor: '#a855f7', tension: 0.3, fill: false },
+                    { label: 'Baseline Baseline Cohort (Bottom 80%)', data: [], borderColor: '#64748b', tension: 0.3, fill: false },
+                    { label: 'Stratification Inequality Gap', data: [], borderColor: '#f43f5e', backgroundColor: 'rgba(244,63,94,0.1)', fill: true }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94a3b8' } } },
+                scales: {
+                    x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } },
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } }
+                }
+            }
+        });
+
+        function updateLongevitySim() {
+            const decel = parseFloat(decelSlider.value);
+            const lag = parseFloat(lagSlider.value);
+            decelVal.innerText = `${decel}%`;
+            lagVal.innerText = `${lag} yrs`;
+
+            const estimatedGap = (decel * 0.8 + lag * 0.5).toFixed(1);
+            gapVal.innerText = `${estimatedGap} Yrs`;
+
+            if (decel >= 30 && lag >= 20) {
+                alrpStatus.innerText = "RESONANCE LOCK (COLLAPSE)";
+                alrpStatus.style.color = "#ef4444";
+            } else {
+                alrpStatus.innerText = "MILD STRATIFICATION";
+                alrpStatus.style.color = "#10b981";
+            }
+
+            let frontier = [], baseline = [], gap = [];
+            for (let i = 1; i <= 10; i++) {
+                let yr = i * 5;
+                let fVal = 80 + yr * (1 + (decel / 100));
+                let bVal = 78 + yr * (1 + (decel / 100) * (Math.max(0, yr - lag) / yr));
+                frontier.push(fVal.toFixed(1));
+                baseline.push(bVal.toFixed(1));
+                gap.push((fVal - bVal).toFixed(1));
+            }
+
+            chart2.data.datasets[0].data = frontier;
+            chart2.data.datasets[1].data = baseline;
+            chart2.data.datasets[2].data = gap;
+            chart2.update();
+        }
+        decelSlider.addEventListener('input', updateLongevitySim);
+        lagSlider.addEventListener('input', updateLongevitySim);
+        updateLongevitySim();
     </script>
 </body>
 </html>
