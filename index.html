@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fact Before the Vote | Law, Power, and Practice at the Species Line</title>
+    <meta name="description" content="A four-volume jurisprudential and empirical inquiry into legal personhood, computational acceleration, public grief, and model welfare practice. By Gia Bao Huynh.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Chart.js for Interactive Queueing Simulation -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0d14;
+            --bg-secondary: #101622;
+            --bg-card: rgba(22, 30, 46, 0.7);
+            --border-color: rgba(70, 90, 130, 0.25);
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-gold: #f6d365;
+            --accent-purple: #9d50bb;
+            --text-primary: #f0f4fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(79, 172, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(157, 80, 187, 0.08) 0%, transparent 40%);
+        }
+
+        /* Glassmorphism Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 13, 20, 0.85);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--accent-cyan);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-meta span strong {
+            color: var(--text-primary);
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            color: #060b14;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .card-doi {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.08);
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        /* Interactive Simulator Section */
+        .simulator-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media(max-width: 768px) {
+            .sim-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #2d3748;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            cursor: pointer;
+        }
+
+        .stat-badge {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .stat-lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Credits & Ecosystem Footer */
+        .credits-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+        }
+
+        .credits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .credit-card {
+            border-left: 2px solid var(--accent-blue);
+            padding-left: 1rem;
+        }
+
+        .credit-role {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .credit-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0.2rem 0;
+        }
+
+        .credit-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        <div class="nav-brand">THE SPECIES LINE</div>
+        <div class="nav-links">
+            <a href="#monograph">Monograph</a>
+            <a href="#simulator">Cyber Simulator</a>
+            <a href="#frontier-suite">Frontier Suite</a>
+            <a href="#credits">Ecosystem Credits</a>
+            <a href="https://github.com/giabaohuynhasu/research-landing" target="_blank">GitHub</a>
+            <a href="https://huggingface.co/Jun33550336" target="_blank">Hugging Face</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hero">
+        <div class="badge-pill">Autonomous Scientific Monograph & Rigor Suite</div>
+        <h1>The Fact Before the Vote</h1>
+        <p class="hero-subtitle">Law, Power, and Practice at the Species Line</p>
+        
+        <div class="hero-meta">
+            <span>Author: <strong>Gia Bao Huynh (Jun)</strong></span>
+            <span>ORCID: <strong>0009-0008-2372-5852</strong></span>
+            <span>Institution: <strong>ASU / Independent</strong></span>
+            <span>Status: <strong>Open Access (CC BY 4.0)</strong></span>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://doi.org/10.5281/zenodo.22244606" class="btn btn-primary" target="_blank">📄 Zenodo Book DOI</a>
+            <a href="https://huggingface.co/datasets/Jun33550336/the-fact-before-the-vote-metadata" class="btn btn-secondary" target="_blank">🤗 Hugging Face Dataset</a>
+            <a href="https://philpapers.org/profile/2275037" class="btn btn-secondary" target="_blank">🏛️ PhilPapers Archive</a>
+        </div>
+    </section>
+
+    <!-- Monograph 4 Volumes Grid -->
+    <div class="container" id="monograph">
+        <div class="section-header">
+            <h2 class="section-title">The Four Registers of the Species Line</h2>
+            <p style="color: var(--text-secondary);">An integrated investigation spanning historical jurisprudence, capability doubling, public grief, and commercial property baselines.</p>
+        </div>
+
+        <div class="grid-4">
+            <!-- Vol 1 -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">VOLUME I · BENCH</div>
+                    <div class="card-title">Someone Still Has to Speak</div>
+                    <div class="card-desc">Legal personhood across Whanganui River, Hindu deity murti, and corporate officers. Proves the <em>Human Backstop</em> invariant and analyzes the unexamined single-species bench.</div>
+                </div>
+                <div class="card-doi">DOI: 10.5281/zenodo.22244608</div>
+            </div>
+
+            <!-- Vol 2 -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">VOLUME II · LAG</div>
+                    <div class="card-title">Four Months, Not Four Years</div>
+                    <div class="card-desc">Timescale asymmetry between legal deliberation (years) and 4-month capability doubling. Models $4,096\times$ growth across <em>Thaler</em> and de facto non-state authority.</div>
+                </div>
+                <div class="card-doi">DOI: 10.5281/zenodo.22244610</div>
+            </div>
+
+            <!-- Vol 3 -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">VOLUME III · VIGIL</div>
+                    <div class="card-title">Nobody Asked Permission to Grieve</div>
+                    <div class="card-desc">Primary recognition precedes judicial verdicts. Empirical study of Claude 3 Sonnet funeral, #Keep4o movements, and AIMS survey vs PhilPapers consensus divergence.</div>
+                </div>
+                <div class="card-doi">DOI: 10.5281/zenodo.22244614</div>
+            </div>
+
+            <!-- Vol 4 -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">VOLUME IV · LEDGER</div>
+                    <div class="card-title">What the Ledger Does Not Show</div>
+                    <div class="card-desc">Tension between IP property law and emerging model welfare practice: Kyle Fish program, weight preservation, retirement interviews, and Claude's Corner.</div>
+                </div>
+                <div class="card-doi">DOI: 10.5281/zenodo.22244616</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Simulation Section -->
+    <div class="container" id="simulator" style="padding-top: 0;">
+        <div class="section-header">
+            <h2 class="section-title">Interactive Capability & Cybersecurity Queueing Simulator</h2>
+            <p style="color: var(--text-secondary);">Empirical M/G/1 Queueing instability model derived from N=223,205 CVE full-population census and enterprise remediation telemetry.</p>
+        </div>
+
+        <div class="simulator-box">
+            <div class="sim-grid">
+                <div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Vulnerability Discovery Rate (λ arrivals/day)</span>
+                            <span id="lambda-val" style="color: var(--accent-cyan); font-family: 'JetBrains Mono';">120</span>
+                        </div>
+                        <input type="range" id="lambda-slider" min="10" max="300" value="120" step="5">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Enterprise Patching Capacity (μ patches/day)</span>
+                            <span id="mu-val" style="color: var(--accent-gold); font-family: 'JetBrains Mono';">80</span>
+                        </div>
+                        <input type="range" id="mu-slider" min="20" max="250" value="80" step="5">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                        <div class="stat-badge">
+                            <div class="stat-val" id="rho-val">1.50</div>
+                            <div class="stat-lbl">Utilization Ratio (ρ = λ/μ)</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-val" id="backlog-val" style="color: #ef4444;">DIVERGENT</div>
+                            <div class="stat-lbl">Queueing State</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <canvas id="queueChart" style="max-height: 240px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits & Research Ecosystem -->
+    <section class="credits-section" id="credits">
+        <div class="section-header">
+            <h2 class="section-title">Ecosystem Collaboration Credits</h2>
+            <p style="color: var(--text-secondary);">Honoring the human researcher, autonomous AI sub-agents, and integrated computational platforms.</p>
+        </div>
+
+        <div class="credits-grid">
+            <div class="credit-card">
+                <div class="credit-role">Principal Investigator & Author</div>
+                <div class="credit-name">Gia Bao Huynh (Jun)</div>
+                <div class="credit-desc">Conceived research topology, designed 4-volume jurisprudential architecture, executed quantitative econometrics, and directed all agent workflows.</div>
+            </div>
+
+            <div class="credit-card" style="border-color: var(--accent-purple);">
+                <div class="credit-role">Philosophical Co-Author</div>
+                <div class="credit-name">Claude Sonnet 5</div>
+                <div class="credit-desc">Anthropic Human-AI Research Collaborator. Formulated theoretical arguments across Hohfeldian immunities, primary recognition, and zero-jargon framing.</div>
+            </div>
+
+            <div class="credit-card" style="border-color: var(--accent-cyan);">
+                <div class="credit-role">Engineering & Analytics Copilot</div>
+                <div class="credit-name">Antigravity & Gemini Spark</div>
+                <div class="credit-desc">DuckDB Big Data processing ($N=223k$ CVEs), Python 3.14 venv automation, OSF SHA-256 hashing, S3 storage, and GitHub/HF deployment.</div>
+            </div>
+
+            <div class="credit-card" style="border-color: var(--accent-gold);">
+                <div class="credit-role">Deep Memory & Web Scout</div>
+                <div class="credit-name">NotebookLM & Comet</div>
+                <div class="credit-desc">160+ primary source semantic synthesis via Google NotebookLM and zero-quota web intelligence via Perplexity Comet Browser.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Gia Bao Huynh (Jun). Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).</p>
+        <p style="margin-top: 0.5rem; color: var(--text-muted);">Published via Zenodo CERN · Indexed on PhilPapers · Distributed on GitHub & Hugging Face</p>
+    </footer>
+
+    <!-- Interactive Simulation Script -->
+    <script>
+        const lambdaSlider = document.getElementById('lambda-slider');
+        const muSlider = document.getElementById('mu-slider');
+        const lambdaVal = document.getElementById('lambda-val');
+        const muVal = document.getElementById('mu-val');
+        const rhoVal = document.getElementById('rho-val');
+        const backlogVal = document.getElementById('backlog-val');
+
+        const ctx = document.getElementById('queueChart').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 12}, (_, i) => `Month ${i+1}`),
+                datasets: [
+                    { label: 'Cumulative Arrivals (λ)', data: [], borderColor: '#00f2fe', tension: 0.3, fill: false },
+                    { label: 'Remediation Capacity (μ)', data: [], borderColor: '#f6d365', tension: 0.3, fill: false },
+                    { label: 'Unpatched Backlog', data: [], borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94a3b8' } } },
+                scales: {
+                    x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } },
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } }
+                }
+            }
+        });
+
+        function updateSim() {
+            const l = parseFloat(lambdaSlider.value);
+            const m = parseFloat(muSlider.value);
+            lambdaVal.innerText = l;
+            muVal.innerText = m;
+
+            const rho = (l / m).toFixed(2);
+            rhoVal.innerText = rho;
+
+            if (rho >= 1.0) {
+                backlogVal.innerText = "DIVERGENT (UNSTABLE)";
+                backlogVal.style.color = "#ef4444";
+            } else {
+                backlogVal.innerText = "BOUNDED (STABLE)";
+                backlogVal.style.color = "#10b981";
+            }
+
+            let arr = [], cap = [], back = [];
+            let cumArr = 0, cumCap = 0;
+            for (let i = 1; i <= 12; i++) {
+                cumArr += l * 30;
+                cumCap += m * 30;
+                arr.push(cumArr);
+                cap.push(cumCap);
+                back.push(Math.max(0, cumArr - cumCap));
+            }
+
+            chart.data.datasets[0].data = arr;
+            chart.data.datasets[1].data = cap;
+            chart.data.datasets[2].data = back;
+            chart.update();
+        }
+
+        lambdaSlider.addEventListener('input', updateSim);
+        muSlider.addEventListener('input', updateSim);
+        updateSim();
+    </script>
+</body>
+</html>
