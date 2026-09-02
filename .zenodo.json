@@ -1,0 +1,34 @@
+{
+  "title": "Institutional Endurance and Legal Lag: Empirical Sandboxes and Case Durations",
+  "description": "Empirical datasets, case duration analyses, and third-order audit sandboxes accompanying the research corpus on institutional endurance, legal lag, and governance under accelerated technological change.",
+  "creators": [
+    {
+      "name": "Huynh, Gia Bao",
+      "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam",
+      "orcid": "0009-0008-2372-5852"
+    }
+  ],
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "upload_type": "dataset",
+  "keywords": [
+    "institutional-endurance",
+    "legal-lag",
+    "ai-governance",
+    "tort-liability",
+    "empirical-legal-studies",
+    "the-fact-before-the-vote"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.5281/zenodo.21987355",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.5281/zenodo.21505289",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}
