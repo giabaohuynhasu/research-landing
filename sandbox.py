@@ -48,6 +48,7 @@ from dataclasses import dataclass, field, asdict
 from enum import Enum
 from typing import Dict, Any, List, Optional
 import json
+import os
 import sys
 
 
@@ -196,13 +197,27 @@ class ResearchSandbox:
             ),
         }
 
-    def to_json(self, path: str) -> None:
-        with open(path, "w") as f:
+    def to_json(self, path: str, base_dir: Optional[str] = None) -> None:
+        if base_dir is None:
+            base_dir = os.getcwd()
+        base_dir_abs = os.path.abspath(base_dir)
+        path_abs = os.path.abspath(path)
+        if os.path.commonpath([base_dir_abs, path_abs]) != base_dir_abs:
+            raise ValueError(f"Path traversal detected: {path}")
+
+        with open(path_abs, "w") as f:
             json.dump({"objects": [o.to_dict() for o in self.objects]}, f, indent=2)
 
     @staticmethod
-    def from_json(path: str) -> "ResearchSandbox":
-        with open(path) as f:
+    def from_json(path: str, base_dir: Optional[str] = None) -> "ResearchSandbox":
+        if base_dir is None:
+            base_dir = os.getcwd()
+        base_dir_abs = os.path.abspath(base_dir)
+        path_abs = os.path.abspath(path)
+        if os.path.commonpath([base_dir_abs, path_abs]) != base_dir_abs:
+            raise ValueError(f"Path traversal detected: {path}")
+
+        with open(path_abs) as f:
             data = json.load(f)
         return ResearchSandbox(objects=[ResearchObject.from_dict(o) for o in data["objects"]])
 
