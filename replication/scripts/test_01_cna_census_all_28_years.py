@@ -1,6 +1,5 @@
 import json
 import importlib.util
-import pytest
 from pathlib import Path
 
 # Dynamically import the script since it starts with a number
