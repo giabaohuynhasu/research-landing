@@ -73,7 +73,6 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
             delta = initial_gap
             paths_delta[p, 0] = delta
             for step in range(1, n_steps):
-                t = time_grid[step - 1]
                 
                 # Check for Poisson event
                 rate = lambda_total[step - 1]
@@ -166,13 +165,13 @@ def plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results,
 
 if __name__ == "__main__":
     # Ensure scratch directory exists
-    os.makedirs("/workspace/scratch/alrp-simulation", exist_ok=True)
+    os.makedirs("scratch/alrp-simulation", exist_ok=True)
     
     print("Running ALRP Queueing Simulation...")
     time_grid, lambda_total, lambda_bzm, lambda_gen, results = run_simulation_paths()
     
     # Save chart in scratch
-    chart_path = "/workspace/scratch/alrp-simulation/alrp_simulation_chart.png"
+    chart_path = "scratch/alrp-simulation/alrp_simulation_chart.png"
     plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results, chart_path)
     
     # Print numerical results summary
