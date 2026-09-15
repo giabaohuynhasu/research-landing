@@ -1,12 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from dataclasses import dataclass
 
 # Set matplotlib to non-interactive mode
 import matplotlib
 matplotlib.use('Agg')
 
-def solve_t_star(lambda_bzm0, r_A, lambda_gen0, r_gen, t_evo2, mu_prime):
+@dataclass
+class SimulationParams:
+    lambda_bzm0: float
+    r_A: float
+    lambda_gen0: float
+    r_gen: float
+    t_evo2: float
+
+def solve_t_star(params: SimulationParams, mu_prime: float):
     """
     Solve for the instability threshold t* numerically where lambda_total(t*) = mu_prime.
     """
@@ -14,14 +23,14 @@ def solve_t_star(lambda_bzm0, r_A, lambda_gen0, r_gen, t_evo2, mu_prime):
     
     def equations(t):
         t_val = t[0]
-        val_bzm = lambda_bzm0 * np.exp(r_A * t_val)
+        val_bzm = params.lambda_bzm0 * np.exp(params.r_A * t_val)
         val_gen = 0.0
-        if t_val > t_evo2:
-            val_gen = lambda_gen0 * np.exp(r_gen * (t_val - t_evo2))
+        if t_val > params.t_evo2:
+            val_gen = params.lambda_gen0 * np.exp(params.r_gen * (t_val - params.t_evo2))
         return [val_bzm + val_gen - mu_prime]
     
     # Initial guess
-    t_guess = [np.log(max(0.1, mu_prime / lambda_bzm0)) / r_A]
+    t_guess = [np.log(max(0.1, mu_prime / params.lambda_bzm0)) / params.r_A]
     t_star_solved = fsolve(equations, t_guess)[0]
     return t_star_solved
 
@@ -32,11 +41,13 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
     np.random.seed(seed)
     
     # Parameters
-    lambda_bzm0 = 0.5      # Baseline BZM arrival rate (events/year)
-    r_A = 1.85             # ARSI capability growth rate (year^-1)
-    lambda_gen0 = 0.15     # Baseline de novo generative arrival rate
-    r_gen = 2.2            # Growth rate of de novo generation
-    t_evo2 = 0.15          # Evo 2 event (Aug 2026, ~0.15 years from June 2026 baseline)
+    params = SimulationParams(
+        lambda_bzm0 = 0.5,      # Baseline BZM arrival rate (events/year)
+        r_A = 1.85,             # ARSI capability growth rate (year^-1)
+        lambda_gen0 = 0.15,     # Baseline de novo generative arrival rate
+        r_gen = 2.2,            # Growth rate of de novo generation
+        t_evo2 = 0.15           # Evo 2 event (Aug 2026, ~0.15 years from June 2026 baseline)
+    )
     
     # Jump size distribution (Lognormal)
     e_delta = 1.5
@@ -56,10 +67,10 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
     n_steps = len(time_grid)
     
     # Pre-calculate arrival rates on grid
-    lambda_bzm = lambda_bzm0 * np.exp(r_A * time_grid)
+    lambda_bzm = params.lambda_bzm0 * np.exp(params.r_A * time_grid)
     lambda_gen = np.zeros_like(time_grid)
-    mask_gen = time_grid > t_evo2
-    lambda_gen[mask_gen] = lambda_gen0 * np.exp(r_gen * (time_grid[mask_gen] - t_evo2))
+    mask_gen = time_grid > params.t_evo2
+    lambda_gen[mask_gen] = params.lambda_gen0 * np.exp(params.r_gen * (time_grid[mask_gen] - params.t_evo2))
     lambda_total = lambda_bzm + lambda_gen
     
     results = {}
@@ -97,7 +108,7 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
         
         # Calculate t*
         mu_prime = mu_val / e_delta
-        t_star = solve_t_star(lambda_bzm0, r_A, lambda_gen0, r_gen, t_evo2, mu_prime)
+        t_star = solve_t_star(params, mu_prime)
         
         results[label] = {
             "paths": paths_delta,
