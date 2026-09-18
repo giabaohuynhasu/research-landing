@@ -21,9 +21,16 @@ philpapers_taxonomy:
   - "Philosophy of Science > Confirmation and Falsification"
   - "Metaphysics > Philosophy of Time"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822032"
+zenodo_url: "https://zenodo.org/record/22822032"---
 
 # Corpus Temporalism: Timestamp as Argument, and Why Sequence Carries Evidential Weight
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822032.svg)](https://doi.org/10.5281/zenodo.22822032)  
+**DOI**: [10.5281/zenodo.22822032](https://doi.org/10.5281/zenodo.22822032) | **Zenodo Record**: [https://zenodo.org/record/22822032](https://zenodo.org/record/22822032)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

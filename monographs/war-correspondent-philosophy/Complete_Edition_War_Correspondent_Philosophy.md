@@ -22,9 +22,15 @@ philpapers_taxonomy:
   - "Philosophy of Computing and Information > Philosophy of Artificial Intelligence"
   - "Applied Ethics > Research Ethics"
 zenodo_type: "publication/book"
----
+
+doi: "10.5281/zenodo.22822023"
+zenodo_url: "https://zenodo.org/record/22822023"---
 
 # War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822023.svg)](https://doi.org/10.5281/zenodo.22822023)  
+**DOI**: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023) | **Zenodo Record**: [https://zenodo.org/record/22822023](https://zenodo.org/record/22822023)
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

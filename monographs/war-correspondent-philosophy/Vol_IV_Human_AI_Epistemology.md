@@ -21,9 +21,16 @@ philpapers_taxonomy:
   - "Philosophy of Technology > Philosophy of Computing"
   - "General Philosophy of Science > Methodology of Science"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822034"
+zenodo_url: "https://zenodo.org/record/22822034"---
 
 # Human–AI Epistemology: Statelessness, Machine-Speed Division of Labor, and the Mechanical Condition
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822034.svg)](https://doi.org/10.5281/zenodo.22822034)  
+**DOI**: [10.5281/zenodo.22822034](https://doi.org/10.5281/zenodo.22822034) | **Zenodo Record**: [https://zenodo.org/record/22822034](https://zenodo.org/record/22822034)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

@@ -20,9 +20,16 @@ philpapers_taxonomy:
   - "Philosophy of Science > Confirmation and Falsification"
   - "History and Philosophy of Science > Imre Lakatos"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822038"
+zenodo_url: "https://zenodo.org/record/22822038"---
 
 # The Prospective and Self-Revising Life of a Framework: What a Theory Does After It Is Falsified
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822038.svg)](https://doi.org/10.5281/zenodo.22822038)  
+**DOI**: [10.5281/zenodo.22822038](https://doi.org/10.5281/zenodo.22822038) | **Zenodo Record**: [https://zenodo.org/record/22822038](https://zenodo.org/record/22822038)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

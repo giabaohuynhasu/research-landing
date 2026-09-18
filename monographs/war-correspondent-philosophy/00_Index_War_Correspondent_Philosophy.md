@@ -40,6 +40,19 @@ Embedded     Falsification &    Corpus       Human–AI       Mechanism     Pros
 
 ---
 
+
+### 🎯 Official Zenodo DOI Registrations
+
+| Volume / Entry | Publication Type | DOI | Zenodo Archive |
+|---|---|---|---|
+| **War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window** | Book | [`10.5281/zenodo.22822023`](https://doi.org/10.5281/zenodo.22822023) | [Zenodo #22822023](https://zenodo.org/record/22822023) |
+| **The Embedded Witness: Temporal Proximity, Designed Absence, and the Self-Demonstrating Text (War Correspondent Philosophy, Vol. I)** | Section | [`10.5281/zenodo.22822028`](https://doi.org/10.5281/zenodo.22822028) | [Zenodo #22822028](https://zenodo.org/record/22822028) |
+| **Falsification and Epistemic Self-Governance: Popper, Independent Attack Surfaces, and Catching One's Own Self-Sealing Drift (War Correspondent Philosophy, Vol. II)** | Section | [`10.5281/zenodo.22822030`](https://doi.org/10.5281/zenodo.22822030) | [Zenodo #22822030](https://zenodo.org/record/22822030) |
+| **Corpus Temporalism: Timestamp as Argument, and Why Sequence Carries Evidential Weight (War Correspondent Philosophy, Vol. III)** | Section | [`10.5281/zenodo.22822032`](https://doi.org/10.5281/zenodo.22822032) | [Zenodo #22822032](https://zenodo.org/record/22822032) |
+| **Human–AI Epistemology: Statelessness, Machine-Speed Division of Labor, and the Mechanical Condition (War Correspondent Philosophy, Vol. IV)** | Section | [`10.5281/zenodo.22822034`](https://doi.org/10.5281/zenodo.22822034) | [Zenodo #22822034](https://zenodo.org/record/22822034) |
+| **Mechanism Transfer and Domain Portability: When a Formal Structure Survives Its Crossing Into a New Domain (War Correspondent Philosophy, Vol. V)** | Section | [`10.5281/zenodo.22822036`](https://doi.org/10.5281/zenodo.22822036) | [Zenodo #22822036](https://zenodo.org/record/22822036) |
+| **The Prospective and Self-Revising Life of a Framework: What a Theory Does After It Is Falsified (War Correspondent Philosophy, Vol. VI)** | Section | [`10.5281/zenodo.22822038`](https://doi.org/10.5281/zenodo.22822038) | [Zenodo #22822038](https://zenodo.org/record/22822038) |
+
 ## 📚 Monograph Volumes
 
 ### 📖 [[Complete_Edition_War_Correspondent_Philosophy|Complete Monograph Edition (All Volumes I–VI)]]

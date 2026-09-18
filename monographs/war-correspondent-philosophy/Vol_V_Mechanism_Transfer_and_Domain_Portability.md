@@ -20,9 +20,16 @@ philpapers_taxonomy:
   - "General Philosophy of Science > Scientific Realism and Antirealism"
   - "General Philosophy of Science > Interdisciplinary Methodology"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822036"
+zenodo_url: "https://zenodo.org/record/22822036"---
 
 # Mechanism Transfer and Domain Portability: When a Formal Structure Survives Its Crossing Into a New Domain
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822036.svg)](https://doi.org/10.5281/zenodo.22822036)  
+**DOI**: [10.5281/zenodo.22822036](https://doi.org/10.5281/zenodo.22822036) | **Zenodo Record**: [https://zenodo.org/record/22822036](https://zenodo.org/record/22822036)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

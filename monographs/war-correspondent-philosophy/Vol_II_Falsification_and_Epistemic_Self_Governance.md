@@ -20,9 +20,16 @@ philpapers_taxonomy:
   - "Epistemology > Epistemic Justification"
   - "General Philosophy of Science > Scientific Realism"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822030"
+zenodo_url: "https://zenodo.org/record/22822030"---
 
 # Falsification and Epistemic Self-Governance: Popper, Independent Attack Surfaces, and Catching One's Own Self-Sealing Drift
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822030.svg)](https://doi.org/10.5281/zenodo.22822030)  
+**DOI**: [10.5281/zenodo.22822030](https://doi.org/10.5281/zenodo.22822030) | **Zenodo Record**: [https://zenodo.org/record/22822030](https://zenodo.org/record/22822030)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  

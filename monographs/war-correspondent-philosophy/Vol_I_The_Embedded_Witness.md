@@ -20,9 +20,16 @@ philpapers_taxonomy:
   - "Social Epistemology"
   - "General Philosophy of Science > Methodology of Science"
 zenodo_type: "publication/section"
----
+
+doi: "10.5281/zenodo.22822028"
+zenodo_url: "https://zenodo.org/record/22822028"---
 
 # The Embedded Witness: Temporal Proximity, Designed Absence, and the Self-Demonstrating Text
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22822028.svg)](https://doi.org/10.5281/zenodo.22822028)  
+**DOI**: [10.5281/zenodo.22822028](https://doi.org/10.5281/zenodo.22822028) | **Zenodo Record**: [https://zenodo.org/record/22822028](https://zenodo.org/record/22822028)  
+**Part of Monograph**: [*War Correspondent Philosophy (Complete Edition)*](https://doi.org/10.5281/zenodo.22822023) (DOI: [10.5281/zenodo.22822023](https://doi.org/10.5281/zenodo.22822023))
+
 
 **Author**: Gia Bao Huynh (Jun Huynh)  
 **Affiliation**: Independent Researcher, Ho Chi Minh City, Vietnam  
