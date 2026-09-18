@@ -1,0 +1,179 @@
+{
+  "monograph_complete": {
+    "metadata": {
+      "title": "War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window",
+      "upload_type": "publication",
+      "publication_type": "book",
+      "publication_date": "2026-09-06",
+      "description": "<p>A 6-volume philosophical treatise on research epistemology, testimonial evidence under adversarial conditions, adversarial falsification governance, temporal corpus evidentialism, human-machine epistemic division of labor, mechanism transfer across non-isomorphic domains, and prospective framework self-revision.</p><p>Authored by Gia Bao Huynh (Jun Huynh), Independent Researcher, Ho Chi Minh City, Vietnam.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Philosophy of Science",
+        "Epistemology",
+        "Karl Popper",
+        "Falsification",
+        "Testimonial Epistemology",
+        "Temporal Epistemology",
+        "Human-AI Epistemology",
+        "Scientific Methodology",
+        "War Correspondent Method"
+      ],
+      "language": "eng"
+    }
+  },
+  "volume_1": {
+    "metadata": {
+      "title": "The Embedded Witness: Temporal Proximity, Designed Absence, and the Self-Demonstrating Text (War Correspondent Philosophy, Vol. I)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume I of the War Correspondent Philosophy monograph. Investigates temporal proximity to epistemic events, designed absence of retrospective bias, testimonial epistemology under closing windows, and the construction of self-demonstrating documentary texts.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Embedded Witness",
+        "Testimonial Epistemology",
+        "Temporal Proximity",
+        "Self-Demonstrating Text",
+        "Epistemic Governance"
+      ],
+      "part_of": {
+        "title": "War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window"
+      }
+    }
+  },
+  "volume_2": {
+    "metadata": {
+      "title": "Falsification and Epistemic Self-Governance: Popper, Independent Attack Surfaces, and Catching One's Own Self-Sealing Drift (War Correspondent Philosophy, Vol. II)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume II of the War Correspondent Philosophy monograph. Explores Popperian demarcation, independent adversarial attack surfaces, internal governance protocols, and systematic heuristics for diagnosing and arresting self-sealing epistemic drift.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Falsification",
+        "Karl Popper",
+        "Epistemic Self-Governance",
+        "Attack Surface",
+        "Self-Sealing Theories",
+        "Demarcation"
+      ]
+    }
+  },
+  "volume_3": {
+    "metadata": {
+      "title": "Corpus Temporalism: Timestamp as Argument, and Why Sequence Carries Evidential Weight (War Correspondent Philosophy, Vol. III)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume III of the War Correspondent Philosophy monograph. Formulates Corpus Temporalism: the epistemic thesis that cryptographic timestamps and unalterable sequential order carry inherent evidential weight, distinguishing genuine prospective prediction from retrospective accommodation.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Corpus Temporalism",
+        "Timestamp as Argument",
+        "Sequence Epistemology",
+        "Prediction vs Accommodation",
+        "Cryptographic Evidentialism"
+      ]
+    }
+  },
+  "volume_4": {
+    "metadata": {
+      "title": "Human–AI Epistemology: Statelessness, Machine-Speed Division of Labor, and the Mechanical Condition (War Correspondent Philosophy, Vol. IV)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume IV of the War Correspondent Philosophy monograph. Analyzes human-machine cognitive collaboration, model statelessness, machine-speed epistemic division of labor, prompt-bound working memory, and the mechanical condition of synthetic intellects.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Human-AI Epistemology",
+        "Statelessness",
+        "Division of Labor",
+        "Synthetic Intellect",
+        "Philosophy of Artificial Intelligence"
+      ]
+    }
+  },
+  "volume_5": {
+    "metadata": {
+      "title": "Mechanism Transfer and Domain Portability: When a Formal Structure Survives Its Crossing Into a New Domain (War Correspondent Philosophy, Vol. V)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume V of the War Correspondent Philosophy monograph. Examines the epistemology of mechanism transfer: conditions under which formal mathematical and logical structures maintain explanatory validity and empirical power when ported into novel domains.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Mechanism Transfer",
+        "Domain Portability",
+        "Models and Analogies",
+        "Structural Realism",
+        "Formal Invariance"
+      ]
+    }
+  },
+  "volume_6": {
+    "metadata": {
+      "title": "The Prospective and Self-Revising Life of a Framework: What a Theory Does After It Is Falsified (War Correspondent Philosophy, Vol. VI)",
+      "upload_type": "publication",
+      "publication_type": "section",
+      "publication_date": "2026-09-06",
+      "description": "<p>Volume VI of the War Correspondent Philosophy monograph. Investigates post-falsification dynamics, Lakatosian progressive problem-shifts versus degenerative defense maneuvers, and the ethical responsibility of self-revising theoretical frameworks.</p>",
+      "creators": [
+        {
+          "name": "Huynh, Gia Bao",
+          "affiliation": "Independent Researcher, Ho Chi Minh City, Vietnam"
+        }
+      ],
+      "access_right": "open",
+      "license": "cc-by-4.0",
+      "keywords": [
+        "Self-Revising Frameworks",
+        "Post-Falsification Dynamics",
+        "Imre Lakatos",
+        "Progressive Problem Shifts",
+        "Theory Change"
+      ]
+    }
+  }
+}
