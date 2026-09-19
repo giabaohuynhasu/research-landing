@@ -71,13 +71,13 @@ Gia Bao Huynh is an independent researcher based in Ho Chi Minh City, Vietnam, w
 - **Method & Epistemology** — A reflective strand on the work's own process: what standards of evidence and trust should apply to philosophy produced in real-time collaboration with an AI system.
 
 ## Selected work
-- *War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window* (6-volume monograph, book) — https://doi.org/10.5281/zenodo.22822023  
-  - *Vol. I: The Embedded Witness* — https://doi.org/10.5281/zenodo.22822028  
-  - *Vol. II: Falsification and Epistemic Self-Governance* — https://doi.org/10.5281/zenodo.22822030  
-  - *Vol. III: Corpus Temporalism* — https://doi.org/10.5281/zenodo.22822032  
-  - *Vol. IV: Human–AI Epistemology* — https://doi.org/10.5281/zenodo.22822034  
-  - *Vol. V: Mechanism Transfer and Domain Portability* — https://doi.org/10.5281/zenodo.22822036  
-  - *Vol. VI: The Prospective and Self-Revising Life of a Framework* — https://doi.org/10.5281/zenodo.22822038  
+- *War Correspondent Philosophy: Method, Evidence, and the Ethics of Research Under a Closing Window* (6-volume monograph, book) — DOI: https://doi.org/10.5281/zenodo.22822023 · PhilPapers: [HUYWCP-3](https://philpapers.org/rec/HUYWCP-3) · Academia: [Academia #175807018](https://www.academia.edu/175807018/War_Correspondent_Philosophy_Method_Evidence_and_the_Ethics_of_Research_Under_a_Closing_Window)  
+  - *Vol. I: The Embedded Witness* — DOI: https://doi.org/10.5281/zenodo.22822028 · PhilPapers: [HUYTEW-2](https://philpapers.org/rec/HUYTEW-2) · Academia: [Academia #175806150](https://www.academia.edu/175806150/War_Correspondent_Philosophy_Vol_I_The_Embedded_Witness)  
+  - *Vol. II: Falsification and Epistemic Self-Governance* — DOI: https://doi.org/10.5281/zenodo.22822030 · PhilPapers: [HUYFAE](https://philpapers.org/rec/HUYFAE) · Academia: [Academia #175779803](https://www.academia.edu/175779803/War_Correspondent_Philosophy_Vol_II_Falsification_and_Epistemic_Self_Governance)  
+  - *Vol. III: Corpus Temporalism* — DOI: https://doi.org/10.5281/zenodo.22822032 · PhilPapers: [HUYCTT](https://philpapers.org/rec/HUYCTT) · Academia: [Academia #175780429](https://www.academia.edu/175780429/War_Correspondent_Philosophy_Vol_III_Corpus_Temporalism)  
+  - *Vol. IV: Human–AI Epistemology* — DOI: https://doi.org/10.5281/zenodo.22822034 · PhilPapers: [HUYHES](https://philpapers.org/rec/HUYHES) · Academia: [Academia #175780492](https://www.academia.edu/175780492/War_Correspondent_Philosophy_Vol_IV_Human_AI_Epistemology)  
+  - *Vol. V: Mechanism Transfer and Domain Portability* — DOI: https://doi.org/10.5281/zenodo.22822036 · PhilPapers: [HUYMTA](https://philpapers.org/rec/HUYMTA) · Academia: [Academia #175801301](https://www.academia.edu/175801301/War_Correspondent_Philosophy_Vol_V_Mechanism_Transfer_and_Domain_Portability)  
+  - *Vol. VI: The Prospective and Self-Revising Life of a Framework* — DOI: https://doi.org/10.5281/zenodo.22822038 · PhilPapers: [HUYTPA-3](https://philpapers.org/rec/HUYTPA-3) · Academia: [Academia #175806753](https://www.academia.edu/175806753/War_Correspondent_Philosophy_Vol_VI_The_Prospective_and_Self_Revising_Life_of_a_Framework)  
 - *Till Death Tear Us Apart: A Structural Analysis of the Longevity Asymmetry and the Closing Window* (book) — https://zenodo.org/records/20777406  
 - *In the Name of Merit: Six Gatekeeping Mechanisms, from the Hundred Schools of Thought to the Algorithmic Archive* (book) — https://zenodo.org/records/21599600
 
