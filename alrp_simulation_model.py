@@ -5,6 +5,15 @@ import os
 # Set matplotlib to non-interactive mode
 import matplotlib
 matplotlib.use('Agg')
+from dataclasses import dataclass
+
+@dataclass
+class ALRPSimulationData:
+    time_grid: np.ndarray
+    lambda_total: np.ndarray
+    lambda_bzm: np.ndarray
+    lambda_gen: np.ndarray
+    results: dict
 
 def solve_t_star(lambda_bzm0, r_A, lambda_gen0, r_gen, t_evo2, mu_prime):
     """
@@ -110,28 +119,34 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
             "mu_prime": mu_prime
         }
         
-    return time_grid, lambda_total, lambda_bzm, lambda_gen, results
+    return ALRPSimulationData(
+        time_grid=time_grid,
+        lambda_total=lambda_total,
+        lambda_bzm=lambda_bzm,
+        lambda_gen=lambda_gen,
+        results=results
+    )
 
-def plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results, output_path):
+def plot_alrp_dynamics(sim_data: ALRPSimulationData, output_path):
     """
     Generates a high-quality visualization of the ALRP queueing dynamics under Evo 2 de novo expansion.
     """
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 10), sharex=True)
     
     # 1. Plot Arrival Rates vs Diffusion Capacity
-    ax1.plot(time_grid, lambda_bzm, label="Baseline discovery rate (AI-accelerated)", color="#2b5c8f", linestyle="--", linewidth=1.8)
-    ax1.plot(time_grid, lambda_gen, label="De-novo generative rate (Evo 2)", color="#d95f02", linestyle=":", linewidth=1.8)
-    ax1.plot(time_grid, lambda_total, label="Total discovery rate λ(t)", color="#7570b3", linewidth=2.5)
+    ax1.plot(sim_data.time_grid, sim_data.lambda_bzm, label="Baseline discovery rate (AI-accelerated)", color="#2b5c8f", linestyle="--", linewidth=1.8)
+    ax1.plot(sim_data.time_grid, sim_data.lambda_gen, label="De-novo generative rate (Evo 2)", color="#d95f02", linestyle=":", linewidth=1.8)
+    ax1.plot(sim_data.time_grid, sim_data.lambda_total, label="Total discovery rate λ(t)", color="#7570b3", linewidth=2.5)
     
     # Draw horizontal lines for mu'
     colors_mu = ["#e7298a", "#1b9e77", "#66a61e"]
-    for i, (label, res) in enumerate(results.items()):
+    for i, (label, res) in enumerate(sim_data.results.items()):
         mu_prime = res["mu_prime"]
         t_star = res["t_star"]
         color = colors_mu[i]
         
         ax1.axhline(y=mu_prime, color=color, linestyle="-.", label=f"Diffusion capacity μ': {label.split(' ')[0]}", alpha=0.8)
-        if t_star < time_grid[-1]:
+        if t_star < sim_data.time_grid[-1]:
             ax1.axvline(x=t_star, color=color, linestyle="--", alpha=0.6)
             ax1.plot(t_star, mu_prime, marker="o", color=color, markersize=8)
             ax1.text(t_star + 0.05, mu_prime + 0.2, f"t* = {t_star:.2f} years", color=color, fontweight="bold", fontsize=9)
@@ -146,11 +161,11 @@ def plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results,
     ax1.text(0.17, 0.2, "Evo 2 announcement (06/08/2026)", color="red", fontsize=9, alpha=0.8)
     
     # 2. Plot Asymmetry Gap Delta(t) Simulation Paths
-    for i, (label, res) in enumerate(results.items()):
+    for i, (label, res) in enumerate(sim_data.results.items()):
         color = colors_mu[i]
-        ax2.plot(time_grid, res["mean"], label=f"Expected gap Δ(t) - {label.split(' ')[0]}", color=color, linewidth=2)
-        ax2.fill_between(time_grid, res["p25"], res["p75"], color=color, alpha=0.15)
-        ax2.fill_between(time_grid, res["p05"], res["p95"], color=color, alpha=0.05, linestyle=":")
+        ax2.plot(sim_data.time_grid, res["mean"], label=f"Expected gap Δ(t) - {label.split(' ')[0]}", color=color, linewidth=2)
+        ax2.fill_between(sim_data.time_grid, res["p25"], res["p75"], color=color, alpha=0.15)
+        ax2.fill_between(sim_data.time_grid, res["p05"], res["p95"], color=color, alpha=0.05, linestyle=":")
         
     ax2.axhline(y=7.3, color="gray", linestyle="--", alpha=0.5, label="DunedinPACE baseline (7.3 years)")
     ax2.set_xlabel("Time since baseline 06/2026 (years)", fontsize=11, fontweight="bold")
@@ -166,18 +181,18 @@ def plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results,
 
 if __name__ == "__main__":
     # Ensure scratch directory exists
-    os.makedirs("/workspace/scratch/alrp-simulation", exist_ok=True)
+    os.makedirs("./scratch/alrp-simulation", exist_ok=True)
     
     print("Running ALRP Queueing Simulation...")
-    time_grid, lambda_total, lambda_bzm, lambda_gen, results = run_simulation_paths()
+    sim_data = run_simulation_paths()
     
     # Save chart in scratch
-    chart_path = "/workspace/scratch/alrp-simulation/alrp_simulation_chart.png"
-    plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results, chart_path)
+    chart_path = "./scratch/alrp-simulation/alrp_simulation_chart.png"
+    plot_alrp_dynamics(sim_data, chart_path)
     
     # Print numerical results summary
     print("\nSimulation Results Summary:")
-    for label, res in results.items():
+    for label, res in sim_data.results.items():
         print(f"Scenario: {label}")
         print(f"  Diffusion Capacity mu': {res['mu_prime']:.2f} event-equivalents/yr")
         print(f"  Solved Instability Threshold t*: {res['t_star']:.2f} years from baseline (June 2026)")
