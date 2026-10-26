@@ -46,7 +46,7 @@ USAGE
 from __future__ import annotations
 from dataclasses import dataclass, field, asdict
 from enum import Enum
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 import json
 import sys
 

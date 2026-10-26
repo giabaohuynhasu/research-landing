@@ -45,7 +45,7 @@ def run_analysis():
     median_concluded = (concluded_durations[3] + concluded_durations[4]) / 2.0
     mean_concluded = sum(concluded_durations) / len(concluded_durations)
 
-    print(f"\nConcluded Distribution Summary:")
+    print("\nConcluded Distribution Summary:")
     print(f"  - Median: {median_concluded:.1f} years")
     print(f"  - Mean:   {mean_concluded:.1f} years")
     print(f"  - Range:  {min(concluded_durations):.1f} to {max(concluded_durations):.1f} years")

@@ -6,7 +6,6 @@ Author: Gia Bao Huynh (Jun) · Antigravity IDE
 
 import sys
 import pandas as pd
-import numpy as np
 from pathlib import Path
 
 if sys.platform.startswith("win"):
