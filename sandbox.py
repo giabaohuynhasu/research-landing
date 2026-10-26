@@ -221,16 +221,21 @@ def diff_report(a: ResearchObject, b: ResearchObject) -> Dict[str, Any]:
     a_triggers = {(r.delta_type, r.trigger) for r in a.revisions}
     b_triggers = {(r.delta_type, r.trigger) for r in b.revisions}
 
+    a_order1 = a.order1_pass()
+    b_order1 = b.order1_pass()
+    a_order2 = a.order2_pass()
+    b_order2 = b.order2_pass()
+
     return {
         "id": a.id,
-        "order1_pass_agree": a.order1_pass() == b.order1_pass(),
-        "order2_pass_agree": a.order2_pass() == b.order2_pass(),
-        "a_order1_order2": (a.order1_pass(), a.order2_pass()),
-        "b_order1_order2": (b.order1_pass(), b.order2_pass()),
+        "order1_pass_agree": a_order1 == b_order1,
+        "order2_pass_agree": a_order2 == b_order2,
+        "a_order1_order2": (a_order1, a_order2),
+        "b_order1_order2": (b_order1, b_order2),
         "revisions_only_in_a": [{"delta_type": d.value, "trigger": t} for d, t in (a_triggers - b_triggers)],
         "revisions_only_in_b": [{"delta_type": d.value, "trigger": t} for d, t in (b_triggers - a_triggers)],
         "revisions_in_both": [{"delta_type": d.value, "trigger": t} for d, t in (a_triggers & b_triggers)],
-        "agrees_exactly": a_triggers == b_triggers and a.order1_pass() == b.order1_pass() and a.order2_pass() == b.order2_pass(),
+        "agrees_exactly": a_triggers == b_triggers and a_order1 == b_order1 and a_order2 == b_order2,
     }
 
 
