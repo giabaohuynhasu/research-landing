@@ -68,25 +68,25 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
         paths_delta = np.zeros((num_paths, n_steps))
         
         initial_gap = 7.3  # DunedinPACE socioeconomic gradient baseline
+        paths_delta[:, 0] = initial_gap
         
-        for p in range(num_paths):
-            delta = initial_gap
-            paths_delta[p, 0] = delta
-            for step in range(1, n_steps):
-                t = time_grid[step - 1]
-                
-                # Check for Poisson event
-                rate = lambda_total[step - 1]
-                prob_event = rate * dt
-                
-                event_occurred = np.random.rand() < prob_event
-                jump = 0.0
-                if event_occurred:
-                    jump = np.random.lognormal(mu_log, sigma_log)
-                
-                # Update workload process Delta(t)
-                delta = max(0.0, delta - mu_val * dt) + jump
-                paths_delta[p, step] = delta
+        # Pre-calculate probabilities for each step
+        rates = lambda_total[:-1]
+        prob_events = rates * dt
+
+        # Pre-sample all events
+        # event_occurred shape: (num_paths, n_steps - 1)
+        event_occurred = np.random.rand(num_paths, n_steps - 1) < prob_events
+
+        # Sample jumps where events occurred
+        jumps = np.zeros((num_paths, n_steps - 1))
+        num_events = np.sum(event_occurred)
+        if num_events > 0:
+            jumps[event_occurred] = np.random.lognormal(mu_log, sigma_log, size=num_events)
+
+        for step in range(1, n_steps):
+            # Update workload process Delta(t) for all paths simultaneously
+            paths_delta[:, step] = np.maximum(0.0, paths_delta[:, step - 1] - mu_val * dt) + jumps[:, step - 1]
                 
         # Calculate quantiles
         mean_path = np.mean(paths_delta, axis=0)
@@ -166,13 +166,13 @@ def plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results,
 
 if __name__ == "__main__":
     # Ensure scratch directory exists
-    os.makedirs("/workspace/scratch/alrp-simulation", exist_ok=True)
+    os.makedirs("/tmp/scratch/alrp-simulation", exist_ok=True)
     
     print("Running ALRP Queueing Simulation...")
     time_grid, lambda_total, lambda_bzm, lambda_gen, results = run_simulation_paths()
     
     # Save chart in scratch
-    chart_path = "/workspace/scratch/alrp-simulation/alrp_simulation_chart.png"
+    chart_path = "/tmp/scratch/alrp-simulation/alrp_simulation_chart.png"
     plot_alrp_dynamics(time_grid, lambda_total, lambda_bzm, lambda_gen, results, chart_path)
     
     # Print numerical results summary
