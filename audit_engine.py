@@ -1,9 +1,7 @@
 from openai import OpenAI
 
-SYSTEM_PROMPT = open(
-    "prompts/system_prompt.md",
-    encoding="utf-8"
-).read()
+with open("prompts/system_prompt.md", encoding="utf-8") as f:
+    SYSTEM_PROMPT = f.read()
 
 
 class ThirdOrderAudit:
