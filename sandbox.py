@@ -43,10 +43,9 @@ USAGE
     python3 sandbox.py new                             # print an empty template
 """
 
-from __future__ import annotations
 from dataclasses import dataclass, field, asdict
 from enum import Enum
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 import json
 import sys
 
