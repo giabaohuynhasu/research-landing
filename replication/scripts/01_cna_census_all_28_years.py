@@ -33,30 +33,25 @@ def extract_cve_info(raw_bytes):
     except Exception:
         return "ERROR", "UNKNOWN"
 
-def main():
-    print("=" * 80)
-    print("TASK A: FULL 28-YEAR POPULATION CENSUS (1999 - 2026)")
-    print(f"Source: {ZIP_PATH}")
-    print("=" * 80)
+def extract_year_from_filename(filename):
+    if not filename.endswith(".json") or "cves/" not in filename:
+        return None
+    parts = filename.split("/")
+    for p in parts:
+        if p.isdigit() and len(p) == 4:
+            return int(p)
+    return None
 
+def process_zip_records(zip_path):
     year_total = Counter()
     year_published = Counter()
     year_rejected = Counter()
     year_assigners = defaultdict(Counter)
-
     processed = 0
-    with zipfile.ZipFile(ZIP_PATH, 'r') as z:
+
+    with zipfile.ZipFile(zip_path, 'r') as z:
         for info in z.infolist():
-            if not info.filename.endswith(".json") or "cves/" not in info.filename:
-                continue
-
-            parts = info.filename.split("/")
-            year_val = None
-            for p in parts:
-                if p.isdigit() and len(p) == 4:
-                    year_val = int(p)
-                    break
-
+            year_val = extract_year_from_filename(info.filename)
             if year_val is not None and 1999 <= year_val <= 2026:
                 raw_bytes = z.read(info)
                 state, assigner = extract_cve_info(raw_bytes)
@@ -70,8 +65,9 @@ def main():
                 if processed % 50000 == 0:
                     print(f"  Streaming: processed {processed:,} records...")
 
-    print(f"\n[✓] Completed parsing {processed:,} records across all 28 years.")
+    return year_total, year_published, year_rejected, year_assigners, processed
 
+def calculate_yearly_metrics(year_total, year_published, year_rejected, year_assigners):
     rows = []
     for y in range(1999, 2027):
         tot = year_total[y]
@@ -102,10 +98,9 @@ def main():
             "top10_concentration_pct": round(cr10, 2),
             "hhi": round(hhi, 2)
         })
+    return rows
 
-    df = pd.DataFrame(rows)
-    df.to_csv(OUTPUT_CSV, index=False)
-    print(f"\n[✓] Full 28-Year Census CSV saved to: {OUTPUT_CSV}")
+def print_summary(df):
     print("\nSummary Table:")
     print(df.to_string(index=False))
     print("\n" + "=" * 80)
@@ -113,6 +108,24 @@ def main():
     print(f"TOTAL PUBLISHED (N_pub)     : {df['published_records'].sum():,}")
     print(f"TOTAL REJECTED (N_rej)      : {df['rejected_records'].sum():,} ({df['rejected_records'].sum() / df['total_records'].sum() * 100:.2f}%)")
     print("=" * 80)
+
+def main():
+    print("=" * 80)
+    print("TASK A: FULL 28-YEAR POPULATION CENSUS (1999 - 2026)")
+    print(f"Source: {ZIP_PATH}")
+    print("=" * 80)
+
+    year_total, year_published, year_rejected, year_assigners, processed = process_zip_records(ZIP_PATH)
+
+    print(f"\n[✓] Completed parsing {processed:,} records across all 28 years.")
+
+    rows = calculate_yearly_metrics(year_total, year_published, year_rejected, year_assigners)
+
+    df = pd.DataFrame(rows)
+    df.to_csv(OUTPUT_CSV, index=False)
+    print(f"\n[✓] Full 28-Year Census CSV saved to: {OUTPUT_CSV}")
+
+    print_summary(df)
 
 if __name__ == '__main__':
     main()
