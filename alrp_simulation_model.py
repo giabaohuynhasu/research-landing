@@ -29,6 +29,13 @@ def run_simulation_paths(num_paths=100, t_max=4.0, dt=0.001, seed=42):
     """
     Simulates the ALRP Workload Process Delta(t) over multiple Monte Carlo paths.
     """
+    if num_paths <= 0:
+        raise ValueError("num_paths must be strictly positive")
+    if t_max <= 0:
+        raise ValueError("t_max must be strictly positive")
+    if dt <= 0:
+        raise ValueError("dt must be strictly positive")
+
     np.random.seed(seed)
     
     # Parameters
